@@ -1,0 +1,14 @@
+/Users/larissarabelo/Developer/anaclara/api/TrainMaster.Domain/bin/Debug/net8.0/TrainMaster.Domain.deps.json
+/Users/larissarabelo/Developer/anaclara/api/TrainMaster.Domain/bin/Debug/net8.0/TrainMaster.Domain.runtimeconfig.json
+/Users/larissarabelo/Developer/anaclara/api/TrainMaster.Domain/bin/Debug/net8.0/TrainMaster.Domain.dll
+/Users/larissarabelo/Developer/anaclara/api/TrainMaster.Domain/bin/Debug/net8.0/TrainMaster.Domain.pdb
+/Users/larissarabelo/Developer/anaclara/api/TrainMaster.Domain/obj/Debug/net8.0/TrainMaster.Domain.csproj.AssemblyReference.cache
+/Users/larissarabelo/Developer/anaclara/api/TrainMaster.Domain/obj/Debug/net8.0/TrainMaster.Domain.GeneratedMSBuildEditorConfig.editorconfig
+/Users/larissarabelo/Developer/anaclara/api/TrainMaster.Domain/obj/Debug/net8.0/TrainMaster.Domain.AssemblyInfoInputs.cache
+/Users/larissarabelo/Developer/anaclara/api/TrainMaster.Domain/obj/Debug/net8.0/TrainMaster.Domain.AssemblyInfo.cs
+/Users/larissarabelo/Developer/anaclara/api/TrainMaster.Domain/obj/Debug/net8.0/TrainMaster.Domain.csproj.CoreCompileInputs.cache
+/Users/larissarabelo/Developer/anaclara/api/TrainMaster.Domain/obj/Debug/net8.0/TrainMaster.Domain.dll
+/Users/larissarabelo/Developer/anaclara/api/TrainMaster.Domain/obj/Debug/net8.0/refint/TrainMaster.Domain.dll
+/Users/larissarabelo/Developer/anaclara/api/TrainMaster.Domain/obj/Debug/net8.0/TrainMaster.Domain.pdb
+/Users/larissarabelo/Developer/anaclara/api/TrainMaster.Domain/obj/Debug/net8.0/TrainMaster.Domain.genruntimeconfig.cache
+/Users/larissarabelo/Developer/anaclara/api/TrainMaster.Domain/obj/Debug/net8.0/ref/TrainMaster.Domain.dll

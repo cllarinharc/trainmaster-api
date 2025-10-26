@@ -1,0 +1,13 @@
+2025-10-25 21:59:10.023 -03:00 [INF] Logging initialized.
+2025-10-25 21:59:50.533 -03:00 [INF] Logging initialized.
+2025-10-25 22:02:38.790 -03:00 [INF] Logging initialized.
+2025-10-25 22:02:43.675 -03:00 [INF] Logging initialized.
+2025-10-25 22:03:51.237 -03:00 [INF] Logging initialized.
+2025-10-25 22:03:55.758 -03:00 [INF] Logging initialized.
+2025-10-25 22:04:01.463 -03:00 [INF] Logging initialized.
+2025-10-25 22:19:28.716 -03:00 [INF] Logging initialized.
+2025-10-25 22:19:33.402 -03:00 [INF] Logging initialized.
+2025-10-25 22:19:38.706 -03:00 [INF] Logging initialized.
+2025-10-25 22:20:31.407 -03:00 [INF] Usuário larissarabelolf@gmail.com autenticado com sucesso.
+2025-10-25 22:26:00.713 -03:00 [INF] Logging initialized.
+2025-10-25 22:26:05.785 -03:00 [INF] Logging initialized.

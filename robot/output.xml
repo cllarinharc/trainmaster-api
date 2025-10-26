@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.13.3 on win32)" generated="2025-06-11T15:55:59.345594" rpa="false" schemaversion="5">
+<suite id="s1" name="Teste Cadastro Curso" source="C:\Users\User\Documents\dev\TrainMaster\robot\teste_cadastro_curso.robot">
+<test id="s1-t1" name="Cenário: Adicionar um novo curso com sucesso" line="63">
+<kw name="Abrir o navegador e fazer login">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-06-11T15:55:59.560324" level="INFO">Opening browser 'chrome' to base url 'http://127.0.0.1:5215/Login'.</msg>
+<arg>${URL_LOGIN}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-06-11T15:55:59.560106" elapsed="1.536028"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-06-11T15:56:01.096435" elapsed="0.024837"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-06-11T15:56:03.121941" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-06-11T15:56:01.121463" elapsed="2.000611"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-11T15:56:03.122747" level="INFO">Typing text '99986651334' into text field '//*[@id='cpf']'.</msg>
+<arg>${INPUT_CPF}</arg>
+<arg>${cpf}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-11T15:56:03.122283" elapsed="0.080156"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-11T15:56:03.202826" level="INFO">Typing text 'qwer12' into text field '//*[@id='Password']'.</msg>
+<arg>${INPUT_SENHA}</arg>
+<arg>${SENHA}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-11T15:56:03.202602" elapsed="0.061037"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-06-11T15:56:03.263999" level="INFO">Clicking button '//button[contains(text(),'Entrar')]'.</msg>
+<arg>${BOTAO_ENTRAR}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-11T15:56:03.263805" elapsed="0.057474"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-06-11T15:56:05.321998" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-06-11T15:56:03.321443" elapsed="2.000751"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-06-11T15:56:05.414933" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-06-11T15:56:05.322474" elapsed="0.092549"/>
+</kw>
+<status status="PASS" start="2025-06-11T15:55:59.559486" elapsed="5.855643"/>
+</kw>
+<kw name="Navegar até página de cursos">
+<kw name="Click Link" owner="SeleniumLibrary">
+<msg time="2025-06-11T15:56:05.415826" level="INFO">Clicking link 'Cursos'.</msg>
+<arg>Cursos</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-11T15:56:05.415698" elapsed="0.208669"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-06-11T15:56:07.625135" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-06-11T15:56:05.624596" elapsed="2.000748"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-06-11T15:56:07.735940" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-2.png"&gt;&lt;img src="selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-06-11T15:56:07.625673" elapsed="0.110360"/>
+</kw>
+<status status="PASS" start="2025-06-11T15:56:05.415468" elapsed="2.320651"/>
+</kw>
+<kw name="Acessar tela de cadastro de curso">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${BOTAO_NOVO_CURSO}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-06-11T15:56:07.736594" elapsed="0.016298"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-06-11T15:56:07.753390" level="INFO">Clicking element '//button[contains(text(),'+ Novo Curso')]'.</msg>
+<arg>${BOTAO_NOVO_CURSO}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-11T15:56:07.753121" elapsed="0.128199"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-06-11T15:56:09.881949" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-06-11T15:56:07.881489" elapsed="2.000571"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-06-11T15:56:09.982606" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-3.png"&gt;&lt;img src="selenium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-06-11T15:56:09.882254" elapsed="0.100503"/>
+</kw>
+<status status="PASS" start="2025-06-11T15:56:07.736386" elapsed="2.246484"/>
+</kw>
+<kw name="Preencher dados do curso">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-11T15:56:09.983518" level="INFO">Typing text 'Curso de Robot Framework Avançado' into text field '//*[@name='Name']'.</msg>
+<arg>${INPUT_NOME}</arg>
+<arg>Curso de Robot Framework Avançado</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-11T15:56:09.983362" elapsed="0.088420"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-11T15:56:10.072325" level="INFO">Typing text 'Automação de testes com Robot Framework Avançado' into text field '//*[@name='Description']'.</msg>
+<arg>${INPUT_DESCRICAO}</arg>
+<arg>Automação de testes com Robot Framework Avançado</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-11T15:56:10.072017" elapsed="0.108750"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-11T15:56:10.181188" level="INFO">Typing text '22/05/2025' into text field '//*[@name='StartDate']'.</msg>
+<arg>${INPUT_START_DATE}</arg>
+<arg>22/05/2025</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-11T15:56:10.180953" elapsed="0.054426"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-11T15:56:10.235757" level="INFO">Typing text '31/05/2025' into text field '//*[@name='EndDate']'.</msg>
+<arg>${INPUT_END_DATE}</arg>
+<arg>31/05/2025</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-11T15:56:10.235544" elapsed="0.055560"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-06-11T15:56:11.291879" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-06-11T15:56:10.291312" elapsed="1.000741"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-06-11T15:56:11.403680" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-4.png"&gt;&lt;img src="selenium-screenshot-4.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-06-11T15:56:11.292346" elapsed="0.111457"/>
+</kw>
+<status status="PASS" start="2025-06-11T15:56:09.983157" elapsed="1.420899"/>
+</kw>
+<kw name="Salvar cadastro">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-06-11T15:56:11.404859" level="INFO">Clicking element '//button[contains(text(),'Salvar')]'.</msg>
+<arg>${BTN_SALVAR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-11T15:56:11.404687" elapsed="0.272110"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-06-11T15:56:13.677725" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-06-11T15:56:11.676991" elapsed="2.000871"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-06-11T15:56:13.790343" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-5.png"&gt;&lt;img src="selenium-screenshot-5.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-06-11T15:56:13.678072" elapsed="0.112360"/>
+</kw>
+<status status="PASS" start="2025-06-11T15:56:11.404423" elapsed="2.386088"/>
+</kw>
+<kw name="Fechar navegador">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-06-11T15:56:13.791075" elapsed="2.138345"/>
+</kw>
+<status status="PASS" start="2025-06-11T15:56:13.790805" elapsed="2.138783"/>
+</kw>
+<tag>cadastro</tag>
+<tag>curso</tag>
+<tag>positivo</tag>
+<status status="PASS" start="2025-06-11T15:55:59.558800" elapsed="16.371058"/>
+</test>
+<status status="PASS" start="2025-06-11T15:55:59.346774" elapsed="16.583753"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">cadastro</stat>
+<stat pass="1" fail="0" skip="0">curso</stat>
+<stat pass="1" fail="0" skip="0">positivo</stat>
+</tag>
+<suite>
+<stat name="Teste Cadastro Curso" id="s1" pass="1" fail="0" skip="0">Teste Cadastro Curso</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

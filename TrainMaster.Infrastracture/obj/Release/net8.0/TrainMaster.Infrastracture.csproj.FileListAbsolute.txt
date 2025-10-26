@@ -1,0 +1,17 @@
+/Users/larissarabelo/Developer/anaclara/api/TrainMaster.Infrastracture/bin/Release/net8.0/TrainMaster.Infrastracture.deps.json
+/Users/larissarabelo/Developer/anaclara/api/TrainMaster.Infrastracture/bin/Release/net8.0/TrainMaster.Infrastracture.runtimeconfig.json
+/Users/larissarabelo/Developer/anaclara/api/TrainMaster.Infrastracture/bin/Release/net8.0/TrainMaster.Infrastracture.dll
+/Users/larissarabelo/Developer/anaclara/api/TrainMaster.Infrastracture/bin/Release/net8.0/TrainMaster.Infrastracture.pdb
+/Users/larissarabelo/Developer/anaclara/api/TrainMaster.Infrastracture/bin/Release/net8.0/TrainMaster.Domain.dll
+/Users/larissarabelo/Developer/anaclara/api/TrainMaster.Infrastracture/bin/Release/net8.0/TrainMaster.Domain.pdb
+/Users/larissarabelo/Developer/anaclara/api/TrainMaster.Infrastracture/obj/Release/net8.0/TrainMaster.Infrastracture.csproj.AssemblyReference.cache
+/Users/larissarabelo/Developer/anaclara/api/TrainMaster.Infrastracture/obj/Release/net8.0/TrainMaster.Infrastracture.GeneratedMSBuildEditorConfig.editorconfig
+/Users/larissarabelo/Developer/anaclara/api/TrainMaster.Infrastracture/obj/Release/net8.0/TrainMaster.Infrastracture.AssemblyInfoInputs.cache
+/Users/larissarabelo/Developer/anaclara/api/TrainMaster.Infrastracture/obj/Release/net8.0/TrainMaster.Infrastracture.AssemblyInfo.cs
+/Users/larissarabelo/Developer/anaclara/api/TrainMaster.Infrastracture/obj/Release/net8.0/TrainMaster.Infrastracture.csproj.CoreCompileInputs.cache
+/Users/larissarabelo/Developer/anaclara/api/TrainMaster.Infrastracture/obj/Release/net8.0/TrainMas.9D45225B.Up2Date
+/Users/larissarabelo/Developer/anaclara/api/TrainMaster.Infrastracture/obj/Release/net8.0/TrainMaster.Infrastracture.dll
+/Users/larissarabelo/Developer/anaclara/api/TrainMaster.Infrastracture/obj/Release/net8.0/refint/TrainMaster.Infrastracture.dll
+/Users/larissarabelo/Developer/anaclara/api/TrainMaster.Infrastracture/obj/Release/net8.0/TrainMaster.Infrastracture.pdb
+/Users/larissarabelo/Developer/anaclara/api/TrainMaster.Infrastracture/obj/Release/net8.0/TrainMaster.Infrastracture.genruntimeconfig.cache
+/Users/larissarabelo/Developer/anaclara/api/TrainMaster.Infrastracture/obj/Release/net8.0/ref/TrainMaster.Infrastracture.dll

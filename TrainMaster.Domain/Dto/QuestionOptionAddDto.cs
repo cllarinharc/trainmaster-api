@@ -1,0 +1,8 @@
+﻿namespace TrainMaster.Domain.Dto
+{
+    public class QuestionOptionAddDto
+    {
+        public string Text { get; set; } = default!;
+        public bool IsCorrect { get; set; }
+    }
+}
