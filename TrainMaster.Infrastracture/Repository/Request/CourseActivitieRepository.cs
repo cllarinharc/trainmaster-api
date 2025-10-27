@@ -40,6 +40,16 @@ namespace TrainMaster.Infrastracture.Repository.Request
                 .Include(a => a.Course)
                 .AsNoTracking()
                 .OrderBy(a => a.StartDate)
+                .Select(a => new CourseActivitieEntity
+                {
+                    Id = a.Id,
+                    Title = a.Title,
+                    Description = a.Description,
+                    StartDate = a.StartDate,
+                    DueDate = a.DueDate,
+                    MaxScore = a.MaxScore,
+                    CourseId = a.Course.Id,
+                })
                 .ToListAsync();
         }
 
