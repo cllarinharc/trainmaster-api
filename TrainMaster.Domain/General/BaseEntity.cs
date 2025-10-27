@@ -8,7 +8,6 @@ namespace TrainMaster.Domain.General
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        [JsonIgnore]
         public int Id { get; set; }
 
         [JsonIgnore]

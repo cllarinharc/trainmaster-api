@@ -14,9 +14,28 @@ namespace TrainMaster.Application.Services
             _repositoryUoW = repositoryUoW;
         }
 
-        public Task<Result<BadgeEntity>> GetById(int id)
+        public async Task<Result<BadgeEntity>> GetById(int id)
         {
-            throw new NotImplementedException();
+            using var transaction = _repositoryUoW.BeginTransaction();
+            try
+            {
+                var badge = await _repositoryUoW.BadgeRepository.GetById(id);
+                if (badge == null)
+                    return Result<BadgeEntity>.Error("Badge não encontrado");
+
+                _repositoryUoW.Commit();
+
+                return Result<BadgeEntity>.Okedit(badge);
+            }
+            catch (Exception ex)
+            {
+                transaction.Rollback();
+                throw new InvalidOperationException("Erro ao buscar badge por ID", ex);
+            }
+            finally
+            {
+                transaction.Dispose();
+            }
         }
     }
 }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "U8EWaAbqtkI=",
+  "dgSpecHash": "Onv827YX2Ps=",
   "success": true,
-  "projectFilePath": "/Users/larissarabelo/Developer/anaclara/api/TrainMaster.Shared/TrainMaster.Shared.csproj",
+  "projectFilePath": "/Users/larissarabelo/Developer/anaclara/GitHub/trainmaster-api/TrainMaster.Shared/TrainMaster.Shared.csproj",
   "expectedPackageFiles": [
     "/Users/larissarabelo/.nuget/packages/bcrypt.net-next/4.0.3/bcrypt.net-next.4.0.3.nupkg.sha512",
     "/Users/larissarabelo/.nuget/packages/coverlet.collector/6.0.4/coverlet.collector.6.0.4.nupkg.sha512",
@@ -166,9 +166,9 @@
       "code": "NU1903",
       "level": "Warning",
       "message": "O pacote 'Npgsql' 8.0.0 tem uma alta vulnerabilidade de gravidade conhecida, https://github.com/advisories/GHSA-x9vc-6hfv-hg8c",
-      "projectPath": "/Users/larissarabelo/Developer/anaclara/api/TrainMaster.Shared/TrainMaster.Shared.csproj",
+      "projectPath": "/Users/larissarabelo/Developer/anaclara/GitHub/trainmaster-api/TrainMaster.Shared/TrainMaster.Shared.csproj",
       "warningLevel": 1,
-      "filePath": "/Users/larissarabelo/Developer/anaclara/api/TrainMaster.Shared/TrainMaster.Shared.csproj",
+      "filePath": "/Users/larissarabelo/Developer/anaclara/GitHub/trainmaster-api/TrainMaster.Shared/TrainMaster.Shared.csproj",
       "libraryId": "Npgsql",
       "targetGraphs": [
         "net8.0"

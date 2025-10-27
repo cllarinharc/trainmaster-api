@@ -40,7 +40,8 @@ namespace TrainMaster.Infrastracture.Repository.Request
                     StartDate = course.StartDate,
                     EndDate = course.EndDate,
                     IsActive = course.IsActive,
-                    Author = course.Author
+                    Author = course.Author,
+                    UserId = course.UserId
                 })
                 .ToListAsync();
         }
@@ -65,7 +66,8 @@ namespace TrainMaster.Infrastracture.Repository.Request
                     StartDate = c.StartDate,
                     EndDate = c.EndDate,
                     IsActive = c.IsActive,
-                    Author = c.Author
+                    Author = c.Author,
+                    UserId = c.UserId
                 })
                 .ToListAsync();
         }

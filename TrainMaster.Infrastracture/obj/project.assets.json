@@ -7546,11 +7546,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/larissarabelo/Developer/anaclara/api/TrainMaster.Infrastracture/TrainMaster.Infrastracture.csproj",
+      "projectUniqueName": "/Users/larissarabelo/Developer/anaclara/GitHub/trainmaster-api/TrainMaster.Infrastracture/TrainMaster.Infrastracture.csproj",
       "projectName": "TrainMaster.Infrastracture",
-      "projectPath": "/Users/larissarabelo/Developer/anaclara/api/TrainMaster.Infrastracture/TrainMaster.Infrastracture.csproj",
+      "projectPath": "/Users/larissarabelo/Developer/anaclara/GitHub/trainmaster-api/TrainMaster.Infrastracture/TrainMaster.Infrastracture.csproj",
       "packagesPath": "/Users/larissarabelo/.nuget/packages/",
-      "outputPath": "/Users/larissarabelo/Developer/anaclara/api/TrainMaster.Infrastracture/obj/",
+      "outputPath": "/Users/larissarabelo/Developer/anaclara/GitHub/trainmaster-api/TrainMaster.Infrastracture/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/larissarabelo/.nuget/NuGet/NuGet.Config"
@@ -7565,8 +7565,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "/Users/larissarabelo/Developer/anaclara/api/TrainMaster.Domain/TrainMaster.Domain.csproj": {
-              "projectPath": "/Users/larissarabelo/Developer/anaclara/api/TrainMaster.Domain/TrainMaster.Domain.csproj"
+            "/Users/larissarabelo/Developer/anaclara/GitHub/trainmaster-api/TrainMaster.Domain/TrainMaster.Domain.csproj": {
+              "projectPath": "/Users/larissarabelo/Developer/anaclara/GitHub/trainmaster-api/TrainMaster.Domain/TrainMaster.Domain.csproj"
             }
           }
         }

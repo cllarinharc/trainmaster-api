@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "FzT/pq/QpB4=",
+  "dgSpecHash": "4wUKdZXTE3Q=",
   "success": true,
-  "projectFilePath": "/Users/larissarabelo/Developer/anaclara/api/TrainMaster/TrainMaster.csproj",
+  "projectFilePath": "/Users/larissarabelo/Developer/anaclara/GitHub/trainmaster-api/TrainMaster/TrainMaster.csproj",
   "expectedPackageFiles": [
     "/Users/larissarabelo/.nuget/packages/bcrypt.net-next/4.0.3/bcrypt.net-next.4.0.3.nupkg.sha512",
     "/Users/larissarabelo/.nuget/packages/coverlet.collector/6.0.4/coverlet.collector.6.0.4.nupkg.sha512",

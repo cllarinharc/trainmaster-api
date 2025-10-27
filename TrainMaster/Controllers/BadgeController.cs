@@ -21,6 +21,10 @@ namespace TrainMaster.Controllers
         public async Task<IActionResult> GetById([FromRoute] int id)
         {
             var result = await _uow.BadgeService.GetById(id);
+
+            if (!result.Success || result.Data is null)
+                return NotFound(new { message = result.Message ?? "Badge não encontrado." });
+
             return Ok(result.Data);
         }
     }

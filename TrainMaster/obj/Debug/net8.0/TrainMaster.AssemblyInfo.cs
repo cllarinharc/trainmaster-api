@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TrainMaster")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+61084d3e3f4e0c17079d82391f162f128f4c3276")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ae2d77d4cac36319f60d79e86a69b63bd3575026")]
 [assembly: System.Reflection.AssemblyProductAttribute("TrainMaster")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TrainMaster")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

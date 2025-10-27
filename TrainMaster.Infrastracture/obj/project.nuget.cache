@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "t9BCNs6joMo=",
+  "dgSpecHash": "lWBcoRDxT74=",
   "success": true,
-  "projectFilePath": "/Users/larissarabelo/Developer/anaclara/api/TrainMaster.Infrastracture/TrainMaster.Infrastracture.csproj",
+  "projectFilePath": "/Users/larissarabelo/Developer/anaclara/GitHub/trainmaster-api/TrainMaster.Infrastracture/TrainMaster.Infrastracture.csproj",
   "expectedPackageFiles": [
     "/Users/larissarabelo/.nuget/packages/bcrypt.net-next/4.0.3/bcrypt.net-next.4.0.3.nupkg.sha512",
     "/Users/larissarabelo/.nuget/packages/fluentvalidation/11.11.0/fluentvalidation.11.11.0.nupkg.sha512",

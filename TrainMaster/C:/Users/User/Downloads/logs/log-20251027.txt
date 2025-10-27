@@ -1,0 +1,123 @@
+2025-10-27 11:10:05.887 -03:00 [INF] Logging initialized.
+2025-10-27 11:10:11.906 -03:00 [INF] Logging initialized.
+2025-10-27 11:10:17.830 -03:00 [INF] Logging initialized.
+2025-10-27 11:12:18.240 -03:00 [ERR] Message: GetAll with success Course.
+2025-10-27 11:12:29.444 -03:00 [ERR] An error occurred while processing the request. StatusCode: 500
+System.NotImplementedException: The method or operation is not implemented.
+   at TrainMaster.Application.Services.BadgeService.GetById(Int32 id) in /Users/larissarabelo/Developer/anaclara/GitHub/trainmaster-api/TrainMaster.Application/Services/BadgeService.cs:line 19
+   at TrainMaster.Controllers.BadgeController.GetById(Int32 id) in /Users/larissarabelo/Developer/anaclara/GitHub/trainmaster-api/TrainMaster/Controllers/BadgeController.cs:line 23
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at TrainMaster.Extensions.ExceptionMiddleware.InvokeAsync(HttpContext context) in /Users/larissarabelo/Developer/anaclara/GitHub/trainmaster-api/TrainMaster/Extensions/ExceptionMiddleware.cs:line 19
+2025-10-27 11:12:46.520 -03:00 [ERR] An error occurred while processing the request. StatusCode: 500
+System.NotImplementedException: The method or operation is not implemented.
+   at TrainMaster.Application.Services.BadgeService.GetById(Int32 id) in /Users/larissarabelo/Developer/anaclara/GitHub/trainmaster-api/TrainMaster.Application/Services/BadgeService.cs:line 19
+   at TrainMaster.Controllers.BadgeController.GetById(Int32 id) in /Users/larissarabelo/Developer/anaclara/GitHub/trainmaster-api/TrainMaster/Controllers/BadgeController.cs:line 23
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at TrainMaster.Extensions.ExceptionMiddleware.InvokeAsync(HttpContext context) in /Users/larissarabelo/Developer/anaclara/GitHub/trainmaster-api/TrainMaster/Extensions/ExceptionMiddleware.cs:line 19
+2025-10-27 11:14:41.895 -03:00 [ERR] An error occurred while processing the request. StatusCode: 500
+System.NotImplementedException: The method or operation is not implemented.
+   at TrainMaster.Application.Services.BadgeService.GetById(Int32 id) in /Users/larissarabelo/Developer/anaclara/GitHub/trainmaster-api/TrainMaster.Application/Services/BadgeService.cs:line 19
+   at TrainMaster.Controllers.BadgeController.GetById(Int32 id) in /Users/larissarabelo/Developer/anaclara/GitHub/trainmaster-api/TrainMaster/Controllers/BadgeController.cs:line 23
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at TrainMaster.Extensions.ExceptionMiddleware.InvokeAsync(HttpContext context) in /Users/larissarabelo/Developer/anaclara/GitHub/trainmaster-api/TrainMaster/Extensions/ExceptionMiddleware.cs:line 19
+2025-10-27 11:14:51.064 -03:00 [ERR] An error occurred while processing the request. StatusCode: 500
+System.NotImplementedException: The method or operation is not implemented.
+   at TrainMaster.Application.Services.BadgeService.GetById(Int32 id) in /Users/larissarabelo/Developer/anaclara/GitHub/trainmaster-api/TrainMaster.Application/Services/BadgeService.cs:line 19
+   at TrainMaster.Controllers.BadgeController.GetById(Int32 id) in /Users/larissarabelo/Developer/anaclara/GitHub/trainmaster-api/TrainMaster/Controllers/BadgeController.cs:line 23
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at TrainMaster.Extensions.ExceptionMiddleware.InvokeAsync(HttpContext context) in /Users/larissarabelo/Developer/anaclara/GitHub/trainmaster-api/TrainMaster/Extensions/ExceptionMiddleware.cs:line 19
+2025-10-27 11:15:36.175 -03:00 [INF] Logging initialized.
+2025-10-27 11:15:37.840 -03:00 [INF] Logging initialized.
+2025-10-27 11:18:15.476 -03:00 [ERR] Message: GetAll with success Course.
+2025-10-27 11:18:20.937 -03:00 [ERR] Message: GetAll with success Course.
+INF] Logging initialized.
+2025-10-27 11:18:11.665 -03:00 [INF] Logging initialized.
+2025-10-27 11:18:17.426 -03:00 [INF] Logging initialized.
+2025-10-27 11:18:45.610 -03:00 [INF] Logging initialized.
+2025-10-27 11:18:52.054 -03:00 [ERR] Message: GetAll with success Course.
+2025-10-27 11:18:59.133 -03:00 [ERR] Message: GetAll with success Course.
+2025-10-27 11:19:56.168 -03:00 [INF] Logging initialized.
+2025-10-27 11:20:00.810 -03:00 [INF] Logging initialized.
+2025-10-27 11:20:06.305 -03:00 [INF] Logging initialized.
+2025-10-27 11:20:16.551 -03:00 [INF] Consulta de feedbacks do curso 38 finalizada.
+2025-10-27 11:20:20.824 -03:00 [INF] Consulta de todos os feedbacks finalizada.
+2025-10-27 11:20:56.821 -03:00 [ERR] Message: GetAll with success Department.
+2025-10-27 11:21:07.324 -03:00 [ERR] Message: GetAll with success Course.
+2025-10-27 11:32:57.265 -03:00 [INF] Consulta de todos os feedbacks finalizada.
+2025-10-27 11:37:21.488 -03:00 [ERR] Message: GetAll with success Notification.

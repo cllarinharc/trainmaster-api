@@ -7433,11 +7433,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/larissarabelo/Developer/anaclara/api/TrainMaster.Domain/TrainMaster.Domain.csproj",
+      "projectUniqueName": "/Users/larissarabelo/Developer/anaclara/GitHub/trainmaster-api/TrainMaster.Domain/TrainMaster.Domain.csproj",
       "projectName": "TrainMaster.Domain",
-      "projectPath": "/Users/larissarabelo/Developer/anaclara/api/TrainMaster.Domain/TrainMaster.Domain.csproj",
+      "projectPath": "/Users/larissarabelo/Developer/anaclara/GitHub/trainmaster-api/TrainMaster.Domain/TrainMaster.Domain.csproj",
       "packagesPath": "/Users/larissarabelo/.nuget/packages/",
-      "outputPath": "/Users/larissarabelo/Developer/anaclara/api/TrainMaster.Domain/obj/",
+      "outputPath": "/Users/larissarabelo/Developer/anaclara/GitHub/trainmaster-api/TrainMaster.Domain/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/larissarabelo/.nuget/NuGet/NuGet.Config"
