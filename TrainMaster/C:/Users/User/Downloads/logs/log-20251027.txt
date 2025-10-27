@@ -121,3 +121,5 @@ INF] Logging initialized.
 2025-10-27 11:21:07.324 -03:00 [ERR] Message: GetAll with success Course.
 2025-10-27 11:32:57.265 -03:00 [INF] Consulta de todos os feedbacks finalizada.
 2025-10-27 11:37:21.488 -03:00 [ERR] Message: GetAll with success Notification.
+2025-10-27 11:40:18.867 -03:00 [INF] Logging initialized.
+2025-10-27 11:40:25.023 -03:00 [ERR] Message: GetAll with success Course.
