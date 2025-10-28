@@ -398,6 +398,31 @@ namespace TrainMaster.Infrastracture.Migrations
                     b.ToTable("ExamQuestionEntity");
                 });
 
+            modelBuilder.Entity("TrainMaster.Domain.Entity.FaqEntity", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Answer")
+                        .HasColumnType("text");
+
+                    b.Property<DateTime?>("CreateDate")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<DateTime?>("ModificationDate")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("Question")
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("FaqEntity");
+                });
+
             modelBuilder.Entity("TrainMaster.Domain.Entity.HistoryPasswordEntity", b =>
                 {
                     b.Property<int>("Id")

@@ -28,7 +28,8 @@ namespace TrainMaster.Extensions.SwaggerDocumentation
                 { "course-activities",  () => HandleCourseActivitiesOperations(operation, context) },
                 { "questions",          () => HandleQuestionsOperations(operation, context) },
                 { "historypassword",    () => HandleHistoryPasswordOperations(operation, context) },
-                { "badges",             () => HandleBadgeOperations(operation, context) }
+                { "badges",             () => HandleBadgeOperations(operation, context) },
+                { "faqs",               () => HandleFaqOperations(operation, context) }
             };
 
             foreach (var kv in routeHandlers
@@ -39,6 +40,20 @@ namespace TrainMaster.Extensions.SwaggerDocumentation
                     kv.Value.Invoke();
                     return;
                 }
+            }
+        }
+
+        private void HandleFaqOperations(OpenApiOperation operation, OperationFilterContext context)
+        {
+            var method = context.ApiDescription.HttpMethod?.ToUpperInvariant();
+            var path = (context.ApiDescription.RelativePath ?? string.Empty).ToLowerInvariant();
+
+            if (method == "GET")
+            {
+                operation.Summary = "Retornar as perguntas e respostas do Faq.";
+                operation.Description = "Esse endpoint é responsável por retornar as perguntas e respostas do Faq.";
+                AddResponses(operation, "201", "Retornado com sucesso.");
+                return;
             }
         }
 

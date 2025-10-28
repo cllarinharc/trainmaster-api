@@ -12,8 +12,8 @@ using TrainMaster.Infrastracture.Connections;
 namespace TrainMaster.Infrastracture.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20251023124045_Teste")]
-    partial class Teste
+    [Migration("20251028112019_Primeira")]
+    partial class Primeira
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -399,6 +399,31 @@ namespace TrainMaster.Infrastracture.Migrations
                         .IsUnique();
 
                     b.ToTable("ExamQuestionEntity");
+                });
+
+            modelBuilder.Entity("TrainMaster.Domain.Entity.FaqEntity", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Answer")
+                        .HasColumnType("text");
+
+                    b.Property<DateTime?>("CreateDate")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<DateTime?>("ModificationDate")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("Question")
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("FaqEntity");
                 });
 
             modelBuilder.Entity("TrainMaster.Domain.Entity.HistoryPasswordEntity", b =>

@@ -7,7 +7,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace TrainMaster.Infrastracture.Migrations
 {
     /// <inheritdoc />
-    public partial class Teste : Migration
+    public partial class Primeira : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -26,6 +26,22 @@ namespace TrainMaster.Infrastracture.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_BadgeEntity", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "FaqEntity",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    Question = table.Column<string>(type: "text", nullable: true),
+                    Answer = table.Column<string>(type: "text", nullable: true),
+                    CreateDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
+                    ModificationDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_FaqEntity", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -608,6 +624,9 @@ namespace TrainMaster.Infrastracture.Migrations
 
             migrationBuilder.DropTable(
                 name: "ExamQuestionEntity");
+
+            migrationBuilder.DropTable(
+                name: "FaqEntity");
 
             migrationBuilder.DropTable(
                 name: "HistoryPasswordEntity");

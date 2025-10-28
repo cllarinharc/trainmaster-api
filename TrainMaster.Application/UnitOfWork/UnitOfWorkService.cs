@@ -28,12 +28,23 @@ namespace TrainMaster.Application.UnitOfWork
         private QuestionService questionService;
         private ExamService examService;
         private BadgeService badgeService;
+        private FaqService faqService;
 
         public UnitOfWorkService(IRepositoryUoW repositoryUoW, TokenService tokenService, BCryptoAlgorithm crypto)
         {
             _repositoryUoW = repositoryUoW;
             _tokenService = tokenService;
             _crypto = crypto;
+        }
+
+        public FaqService FaqService
+        {
+            get
+            {
+                if (faqService is null)
+                    faqService = new FaqService(_repositoryUoW);
+                return faqService;
+            }
         }
 
         public BadgeService BadgeService
