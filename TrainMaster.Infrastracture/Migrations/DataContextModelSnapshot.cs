@@ -95,6 +95,59 @@ namespace TrainMaster.Infrastracture.Migrations
                     b.ToTable("BadgeEntity");
                 });
 
+            modelBuilder.Entity("TrainMaster.Domain.Entity.CalendarEntity", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<int?>("CourseId")
+                        .HasColumnType("integer");
+
+                    b.Property<DateTime?>("CreateDate")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("Description")
+                        .HasMaxLength(500)
+                        .HasColumnType("character varying(500)");
+
+                    b.Property<DateOnly>("EndDate")
+                        .HasColumnType("date");
+
+                    b.Property<int?>("ExamId")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("Location")
+                        .HasMaxLength(200)
+                        .HasColumnType("character varying(200)");
+
+                    b.Property<DateTime?>("ModificationDate")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<DateOnly>("StartDate")
+                        .HasColumnType("date");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("character varying(200)");
+
+                    b.Property<string>("Type")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("character varying(50)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CourseId");
+
+                    b.HasIndex("ExamId");
+
+                    b.ToTable("CalendarEntity");
+                });
+
             modelBuilder.Entity("TrainMaster.Domain.Entity.CourseActivitieEntity", b =>
                 {
                     b.Property<int>("Id")
@@ -736,6 +789,23 @@ namespace TrainMaster.Infrastracture.Migrations
                         .IsRequired();
 
                     b.Navigation("PessoalProfile");
+                });
+
+            modelBuilder.Entity("TrainMaster.Domain.Entity.CalendarEntity", b =>
+                {
+                    b.HasOne("TrainMaster.Domain.Entity.CourseEntity", "Course")
+                        .WithMany()
+                        .HasForeignKey("CourseId")
+                        .OnDelete(DeleteBehavior.SetNull);
+
+                    b.HasOne("TrainMaster.Domain.Entity.ExamEntity", "Exam")
+                        .WithMany()
+                        .HasForeignKey("ExamId")
+                        .OnDelete(DeleteBehavior.SetNull);
+
+                    b.Navigation("Course");
+
+                    b.Navigation("Exam");
                 });
 
             modelBuilder.Entity("TrainMaster.Domain.Entity.CourseActivitieEntity", b =>

@@ -29,7 +29,8 @@ namespace TrainMaster.Extensions.SwaggerDocumentation
                 { "questions",          () => HandleQuestionsOperations(operation, context) },
                 { "historypassword",    () => HandleHistoryPasswordOperations(operation, context) },
                 { "badges",             () => HandleBadgeOperations(operation, context) },
-                { "faqs",               () => HandleFaqOperations(operation, context) }
+                { "faqs",               () => HandleFaqOperations(operation, context) },
+                { "calendar",           () => HandleCalendarOperations(operation, context) }
             };
 
             foreach (var kv in routeHandlers
@@ -40,6 +41,20 @@ namespace TrainMaster.Extensions.SwaggerDocumentation
                     kv.Value.Invoke();
                     return;
                 }
+            }
+        }
+
+        private void HandleCalendarOperations(OpenApiOperation operation, OperationFilterContext context)
+        {
+            var method = context.ApiDescription.HttpMethod?.ToUpperInvariant();
+            var path = (context.ApiDescription.RelativePath ?? string.Empty).ToLowerInvariant();
+
+            if (method == "GetByMonth")
+            {
+                operation.Summary = "Retorna as datas do mês.";
+                operation.Description = "Esse endpoint é responsável por retornar as datas do mês.";
+                AddResponses(operation, "201", "Retornado com sucesso.");
+                return;
             }
         }
 

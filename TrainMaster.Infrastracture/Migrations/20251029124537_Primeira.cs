@@ -440,6 +440,40 @@ namespace TrainMaster.Infrastracture.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "CalendarEntity",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    Title = table.Column<string>(type: "character varying(200)", maxLength: 200, nullable: false),
+                    Description = table.Column<string>(type: "character varying(500)", maxLength: 500, nullable: true),
+                    StartDate = table.Column<DateOnly>(type: "date", nullable: false),
+                    EndDate = table.Column<DateOnly>(type: "date", nullable: false),
+                    Type = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: false),
+                    CourseId = table.Column<int>(type: "integer", nullable: true),
+                    ExamId = table.Column<int>(type: "integer", nullable: true),
+                    Location = table.Column<string>(type: "character varying(200)", maxLength: 200, nullable: true),
+                    CreateDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
+                    ModificationDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_CalendarEntity", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_CalendarEntity_CourseEntity_CourseId",
+                        column: x => x.CourseId,
+                        principalTable: "CourseEntity",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.SetNull);
+                    table.ForeignKey(
+                        name: "FK_CalendarEntity_ExamEntity_ExamId",
+                        column: x => x.ExamId,
+                        principalTable: "ExamEntity",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.SetNull);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "ExamQuestionEntity",
                 columns: table => new
                 {
@@ -501,6 +535,16 @@ namespace TrainMaster.Infrastracture.Migrations
                 table: "AddressEntity",
                 column: "PessoalProfileId",
                 unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_CalendarEntity_CourseId",
+                table: "CalendarEntity",
+                column: "CourseId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_CalendarEntity_ExamId",
+                table: "CalendarEntity",
+                column: "ExamId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_CourseActivitieEntity_CourseId",
@@ -612,6 +656,9 @@ namespace TrainMaster.Infrastracture.Migrations
         {
             migrationBuilder.DropTable(
                 name: "AddressEntity");
+
+            migrationBuilder.DropTable(
+                name: "CalendarEntity");
 
             migrationBuilder.DropTable(
                 name: "CourseAvaliationEntity");

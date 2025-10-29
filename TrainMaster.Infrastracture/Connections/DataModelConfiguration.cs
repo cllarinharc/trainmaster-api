@@ -209,7 +209,6 @@ namespace TrainMaster.Infrastracture.Connections
             modelBuilder.Entity<CourseFeedbackEntity>(entity =>
             {
                 entity.HasKey(f => f.Id);
-
                 entity.Property(f => f.Rating).IsRequired();
                 entity.Property(f => f.Comment).HasMaxLength(1000);
 
@@ -229,16 +228,9 @@ namespace TrainMaster.Infrastracture.Connections
             modelBuilder.Entity<QuestionEntity>(entity =>
             {
                 entity.HasKey(q => q.Id);
-
-                entity.Property(q => q.Statement)
-                      .IsRequired()
-                      .HasColumnType("text");
-
+                entity.Property(q => q.Statement).IsRequired().HasColumnType("text");
                 entity.Property(q => q.Order).IsRequired();
-
-                entity.Property(q => q.Points)
-                      .IsRequired()
-                      .HasColumnType("decimal(10,2)");
+                entity.Property(q => q.Points).IsRequired().HasColumnType("decimal(10,2)");
 
                 entity.HasOne(q => q.CourseActivitie)
                       .WithMany(a => a.Questions)
@@ -251,13 +243,8 @@ namespace TrainMaster.Infrastracture.Connections
             modelBuilder.Entity<QuestionOptionEntity>(entity =>
             {
                 entity.ToTable("QuestionOptionEntity");
-
                 entity.HasKey(o => o.Id);
-
-                entity.Property(o => o.Text)
-                      .IsRequired()
-                      .HasMaxLength(1000);
-
+                entity.Property(o => o.Text).IsRequired().HasMaxLength(1000);
                 entity.Property(o => o.IsCorrect).IsRequired();
 
                 entity.HasOne(o => o.Question)
@@ -274,7 +261,6 @@ namespace TrainMaster.Infrastracture.Connections
             modelBuilder.Entity<ExamEntity>(entity =>
             {
                 entity.HasKey(e => e.Id);
-
                 entity.Property(e => e.Title).IsRequired().HasMaxLength(255);
                 entity.Property(e => e.Instructions).HasColumnType("text");
                 entity.Property(e => e.StartAt).IsRequired();
@@ -294,7 +280,6 @@ namespace TrainMaster.Infrastracture.Connections
             modelBuilder.Entity<ExamQuestionEntity>(entity =>
             {
                 entity.HasKey(eq => eq.Id);
-
                 entity.Property(eq => eq.Order).IsRequired();
                 entity.Property(eq => eq.Points).IsRequired().HasColumnType("decimal(10,2)");
 
@@ -336,6 +321,28 @@ namespace TrainMaster.Infrastracture.Connections
                       .WithMany(b => b.UserBadges)
                       .HasForeignKey(ub => ub.BadgeId)
                       .OnDelete(DeleteBehavior.Cascade);
+            });
+
+            modelBuilder.Entity<CalendarEntity>(entity =>
+            {
+                entity.HasKey(c => c.Id);
+
+                entity.Property(c => c.Title).IsRequired().HasMaxLength(200);
+                entity.Property(c => c.Description).HasMaxLength(500);
+                entity.Property(c => c.StartDate).IsRequired();
+                entity.Property(c => c.EndDate).IsRequired();
+                entity.Property(c => c.Type).IsRequired().HasMaxLength(50);
+                entity.Property(c => c.Location).HasMaxLength(200);
+
+                entity.HasOne(c => c.Course)
+                      .WithMany()
+                      .HasForeignKey(c => c.CourseId)
+                      .OnDelete(DeleteBehavior.SetNull);
+
+                entity.HasOne(c => c.Exam)
+                      .WithMany()
+                      .HasForeignKey(c => c.ExamId)
+                      .OnDelete(DeleteBehavior.SetNull);
             });
         }
     }

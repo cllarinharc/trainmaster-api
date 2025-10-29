@@ -26,6 +26,8 @@ namespace TrainMaster.Application.ExtensionError
         public string Message { get; set; }
         public IEnumerable<ValidationFailure> Errors { get; }
 
+        public static Result<T> Ok(T data) => new() { Success = true, Data = data };
+
         public static Result<T> Ok(string responseMessage = null, T responseData = default)
         {
             return new Result<T>(success: true, message: responseMessage, data: responseData);

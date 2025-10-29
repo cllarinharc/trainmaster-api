@@ -84,5 +84,28 @@ namespace TrainMaster.Infrastracture.Repository.Request
             var response = _context.CourseEntity.Update(courseEntity);
             return response.Entity;
         }
+
+        public async Task<List<CourseEntity>> GetByPeriod(DateOnly start, DateOnly end)
+        {
+            var startDateTimeUtc = DateTime.SpecifyKind(start.ToDateTime(TimeOnly.MinValue), DateTimeKind.Utc);
+            var endDateTimeUtc = DateTime.SpecifyKind(end.ToDateTime(new TimeOnly(23, 59, 59)), DateTimeKind.Utc);
+
+            return await _context.CourseEntity
+                .AsNoTracking()
+                .Where(c => c.StartDate <= endDateTimeUtc && c.EndDate >= startDateTimeUtc)
+                .OrderBy(c => c.StartDate)
+                .Select(c => new CourseEntity
+                {
+                    Id = c.Id,
+                    Name = c.Name,
+                    Description = c.Description,
+                    StartDate = c.StartDate,
+                    EndDate = c.EndDate,
+                    IsActive = c.IsActive,
+                    Author = c.Author,
+                    UserId = c.UserId
+                })
+                .ToListAsync();
+        }
     }
 }

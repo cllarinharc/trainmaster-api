@@ -25,6 +25,7 @@ namespace TrainMaster.Infrastracture.Repository.RepositoryUoW
         IExamQuestionRepository ExamQuestionRepository { get; }
         IBadgeRepository BadgeRepository { get; }
         IFaqRepository FaqRepository { get; }
+        ICalendarRepository CalendarRepository { get; }
 
         Task SaveAsync();
         void Commit();
