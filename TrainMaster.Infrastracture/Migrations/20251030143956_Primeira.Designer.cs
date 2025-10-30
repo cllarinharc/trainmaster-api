@@ -12,7 +12,7 @@ using TrainMaster.Infrastracture.Connections;
 namespace TrainMaster.Infrastracture.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20251029124537_Primeira")]
+    [Migration("20251030143956_Primeira")]
     partial class Primeira
     {
         /// <inheritdoc />
@@ -424,6 +424,56 @@ namespace TrainMaster.Infrastracture.Migrations
                     b.ToTable("ExamEntity");
                 });
 
+            modelBuilder.Entity("TrainMaster.Domain.Entity.ExamHistoryEntity", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("AttemptNumber")
+                        .HasColumnType("integer");
+
+                    b.Property<DateTime?>("CreateDate")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<int?>("DurationSeconds")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("ExamId")
+                        .HasColumnType("integer");
+
+                    b.Property<DateTime?>("FinishedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<DateTime?>("ModificationDate")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<decimal?>("Score")
+                        .HasColumnType("decimal(10,2)");
+
+                    b.Property<DateTime>("StartedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("StudentId")
+                        .HasColumnType("integer");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("StudentId");
+
+                    b.HasIndex("ExamId", "StudentId");
+
+                    b.HasIndex("ExamId", "StudentId", "AttemptNumber")
+                        .IsUnique();
+
+                    b.ToTable("ExamHistoryEntity");
+                });
+
             modelBuilder.Entity("TrainMaster.Domain.Entity.ExamQuestionEntity", b =>
                 {
                     b.Property<int>("Id")
@@ -516,6 +566,9 @@ namespace TrainMaster.Infrastracture.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
+                    b.Property<int?>("CourseEntityId")
+                        .HasColumnType("integer");
+
                     b.Property<int?>("CourseId")
                         .HasColumnType("integer");
 
@@ -530,6 +583,8 @@ namespace TrainMaster.Infrastracture.Migrations
                         .HasColumnType("timestamp with time zone");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("CourseEntityId");
 
                     b.HasIndex("CourseId");
 
@@ -895,6 +950,25 @@ namespace TrainMaster.Infrastracture.Migrations
                     b.Navigation("Course");
                 });
 
+            modelBuilder.Entity("TrainMaster.Domain.Entity.ExamHistoryEntity", b =>
+                {
+                    b.HasOne("TrainMaster.Domain.Entity.ExamEntity", "Exam")
+                        .WithMany()
+                        .HasForeignKey("ExamId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("TrainMaster.Domain.Entity.UserEntity", "Student")
+                        .WithMany()
+                        .HasForeignKey("StudentId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Exam");
+
+                    b.Navigation("Student");
+                });
+
             modelBuilder.Entity("TrainMaster.Domain.Entity.ExamQuestionEntity", b =>
                 {
                     b.HasOne("TrainMaster.Domain.Entity.ExamEntity", "Exam")
@@ -927,8 +1001,12 @@ namespace TrainMaster.Infrastracture.Migrations
 
             modelBuilder.Entity("TrainMaster.Domain.Entity.NotificationEntity", b =>
                 {
-                    b.HasOne("TrainMaster.Domain.Entity.CourseEntity", "Course")
+                    b.HasOne("TrainMaster.Domain.Entity.CourseEntity", null)
                         .WithMany("NotificationEntities")
+                        .HasForeignKey("CourseEntityId");
+
+                    b.HasOne("TrainMaster.Domain.Entity.CourseEntity", "Course")
+                        .WithMany()
                         .HasForeignKey("CourseId")
                         .OnDelete(DeleteBehavior.SetNull);
 

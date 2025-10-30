@@ -326,12 +326,18 @@ namespace TrainMaster.Infrastracture.Migrations
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     Description = table.Column<string>(type: "character varying(500)", maxLength: 500, nullable: true),
                     CourseId = table.Column<int>(type: "integer", nullable: true),
+                    CourseEntityId = table.Column<int>(type: "integer", nullable: true),
                     CreateDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
                     ModificationDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_NotificationEntity", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_NotificationEntity_CourseEntity_CourseEntityId",
+                        column: x => x.CourseEntityId,
+                        principalTable: "CourseEntity",
+                        principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_NotificationEntity_CourseEntity_CourseId",
                         column: x => x.CourseId,
@@ -474,6 +480,40 @@ namespace TrainMaster.Infrastracture.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "ExamHistoryEntity",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    ExamId = table.Column<int>(type: "integer", nullable: false),
+                    StudentId = table.Column<int>(type: "integer", nullable: false),
+                    AttemptNumber = table.Column<int>(type: "integer", nullable: false),
+                    StartedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
+                    FinishedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
+                    Score = table.Column<decimal>(type: "numeric(10,2)", nullable: true),
+                    DurationSeconds = table.Column<int>(type: "integer", nullable: true),
+                    Status = table.Column<int>(type: "integer", nullable: false),
+                    CreateDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
+                    ModificationDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ExamHistoryEntity", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_ExamHistoryEntity_ExamEntity_ExamId",
+                        column: x => x.ExamId,
+                        principalTable: "ExamEntity",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_ExamHistoryEntity_UserEntity_StudentId",
+                        column: x => x.StudentId,
+                        principalTable: "UserEntity",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "ExamQuestionEntity",
                 columns: table => new
                 {
@@ -590,6 +630,22 @@ namespace TrainMaster.Infrastracture.Migrations
                 columns: new[] { "CourseId", "StartAt" });
 
             migrationBuilder.CreateIndex(
+                name: "IX_ExamHistoryEntity_ExamId_StudentId",
+                table: "ExamHistoryEntity",
+                columns: new[] { "ExamId", "StudentId" });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_ExamHistoryEntity_ExamId_StudentId_AttemptNumber",
+                table: "ExamHistoryEntity",
+                columns: new[] { "ExamId", "StudentId", "AttemptNumber" },
+                unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_ExamHistoryEntity_StudentId",
+                table: "ExamHistoryEntity",
+                column: "StudentId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_ExamQuestionEntity_ExamId_QuestionId",
                 table: "ExamQuestionEntity",
                 columns: new[] { "ExamId", "QuestionId" },
@@ -604,6 +660,11 @@ namespace TrainMaster.Infrastracture.Migrations
                 name: "IX_HistoryPasswordEntity_UserId",
                 table: "HistoryPasswordEntity",
                 column: "UserId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_NotificationEntity_CourseEntityId",
+                table: "NotificationEntity",
+                column: "CourseEntityId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_NotificationEntity_CourseId",
@@ -668,6 +729,9 @@ namespace TrainMaster.Infrastracture.Migrations
 
             migrationBuilder.DropTable(
                 name: "EducationLevelEntity");
+
+            migrationBuilder.DropTable(
+                name: "ExamHistoryEntity");
 
             migrationBuilder.DropTable(
                 name: "ExamQuestionEntity");

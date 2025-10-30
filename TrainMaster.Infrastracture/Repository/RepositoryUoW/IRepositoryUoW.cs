@@ -1,5 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore.Storage;
-using TrainMaster.Domain.Entity;
 using TrainMaster.Infrastracture.Repository.Interfaces;
 
 namespace TrainMaster.Infrastracture.Repository.RepositoryUoW
@@ -26,6 +25,7 @@ namespace TrainMaster.Infrastracture.Repository.RepositoryUoW
         IBadgeRepository BadgeRepository { get; }
         IFaqRepository FaqRepository { get; }
         ICalendarRepository CalendarRepository { get; }
+        IExamHistoryRepository ExamHistoryRepository { get; }
 
         Task SaveAsync();
         void Commit();

@@ -201,7 +201,7 @@ namespace TrainMaster.Infrastracture.Connections
                 entity.Property(n => n.Description).HasMaxLength(500);
 
                 entity.HasOne(n => n.Course)
-                      .WithMany(c => c.NotificationEntities)
+                      .WithMany()
                       .HasForeignKey(n => n.CourseId)
                       .OnDelete(DeleteBehavior.SetNull);
             });
@@ -294,6 +294,31 @@ namespace TrainMaster.Infrastracture.Connections
                       .OnDelete(DeleteBehavior.Cascade);
 
                 entity.HasIndex(eq => new { eq.ExamId, eq.QuestionId }).IsUnique();
+            });
+
+            modelBuilder.Entity<ExamHistoryEntity>(entity =>
+            {
+                entity.HasKey(h => h.Id);
+
+                entity.Property(h => h.AttemptNumber).IsRequired();
+                entity.Property(h => h.StartedAt).IsRequired();
+                entity.Property(h => h.FinishedAt);
+                entity.Property(h => h.Score).HasColumnType("decimal(10,2)");
+                entity.Property(h => h.DurationSeconds);
+                entity.Property(h => h.Status).IsRequired();
+
+                entity.HasOne(h => h.Exam)
+                      .WithMany() 
+                      .HasForeignKey(h => h.ExamId)
+                      .OnDelete(DeleteBehavior.Cascade);
+
+                entity.HasOne(h => h.Student)
+                      .WithMany() 
+                      .HasForeignKey(h => h.StudentId)
+                      .OnDelete(DeleteBehavior.Restrict);
+
+                entity.HasIndex(h => new { h.ExamId, h.StudentId });
+                entity.HasIndex(h => new { h.ExamId, h.StudentId, h.AttemptNumber }).IsUnique();
             });
 
             modelBuilder.Entity<BadgeEntity>(entity =>

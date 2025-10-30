@@ -23,5 +23,6 @@ namespace TrainMaster.Application.UnitOfWork
         BadgeService BadgeService { get; }
         FaqService FaqService { get; }
         CalendarService CalendarService { get; }
+        ExamHistoryService ExamHistoryService { get; }
     }
 }

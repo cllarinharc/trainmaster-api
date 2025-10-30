@@ -30,10 +30,23 @@ namespace TrainMaster.Infrastracture.Repository.RepositoryUoW
         private IBadgeRepository _badgeRepository = null;
         private IFaqRepository _faqRepository = null;
         private ICalendarRepository _calendarRepository = null;
+        private IExamHistoryRepository _examHistoryRepository = null;
 
         public RepositoryUoW(DataContext context)
         {
             _context = context;
+        }
+
+        public IExamHistoryRepository ExamHistoryRepository
+        {
+            get
+            {
+                if (_examHistoryRepository is null)
+                {
+                    _examHistoryRepository = new ExamHistoryRepository(_context);
+                }
+                return _examHistoryRepository;
+            }
         }
 
         public ICalendarRepository CalendarRepository
