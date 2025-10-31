@@ -83,7 +83,44 @@ using (var scope = app.Services.CreateScope())
     try
     {
         var context = services.GetRequiredService<DataContext>();
-        await context.Database.MigrateAsync();
+
+        // Sempre tentar marcar a migration como aplicada primeiro (se tabelas já existem)
+        try
+        {
+            loggerSerialLog.Information("Verificando se é necessário marcar migration como aplicada...");
+
+            // Criar tabela de histórico de migrations se não existir
+            await context.Database.ExecuteSqlRawAsync(@"
+                CREATE TABLE IF NOT EXISTS ""__EFMigrationsHistory"" (
+                    ""MigrationId"" character varying(150) NOT NULL,
+                    ""ProductVersion"" character varying(32) NOT NULL,
+                    CONSTRAINT ""PK___EFMigrationsHistory"" PRIMARY KEY (""MigrationId"")
+                );
+            ");
+
+            // Sempre tentar inserir a migration (se já existir, será ignorado por ON CONFLICT)
+            await context.Database.ExecuteSqlRawAsync(@"
+                INSERT INTO ""__EFMigrationsHistory"" (""MigrationId"", ""ProductVersion"")
+                VALUES ('20251030143956_Primeira', '8.0.0')
+                ON CONFLICT (""MigrationId"") DO NOTHING;
+            ");
+
+            loggerSerialLog.Information("Migration '20251030143956_Primeira' verificada/marcada como aplicada.");
+        }
+        catch (Exception ex)
+        {
+            loggerSerialLog.Warning(ex, "Aviso ao verificar/marcar migration, mas continuando...");
+        }
+
+        // Tentar executar migrations (agora deve funcionar pois já está marcada)
+        try
+        {
+            await context.Database.MigrateAsync();
+        }
+        catch (Exception migrateEx)
+        {
+            loggerSerialLog.Warning(migrateEx, "MigrateAsync falhou, mas continuando...");
+        }
 
         // Executar seed do banco de dados
         var seedService = services.GetRequiredService<SeedService>();

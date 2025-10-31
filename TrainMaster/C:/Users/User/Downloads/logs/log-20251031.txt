@@ -1,0 +1,42 @@
+2025-10-31 14:25:42.591 -03:00 [INF] Logging initialized.
+2025-10-31 14:25:48.011 -03:00 [INF] Logging initialized.
+2025-10-31 14:28:21.658 -03:00 [INF] Logging initialized.
+2025-10-31 14:29:19.434 -03:00 [INF] Logging initialized.
+2025-10-31 14:29:37.091 -03:00 [INF] Logging initialized.
+2025-10-31 14:31:44.577 -03:00 [INF] Logging initialized.
+2025-10-31 14:31:49.566 -03:00 [INF] Logging initialized.
+2025-10-31 14:33:01.595 -03:00 [INF] Logging initialized.
+2025-10-31 14:37:32.034 -03:00 [INF] Logging initialized.
+2025-10-31 14:37:37.894 -03:00 [INF] Logging initialized.
+2025-10-31 14:44:33.159 -03:00 [INF] Logging initialized.
+2025-10-31 14:44:38.383 -03:00 [INF] Logging initialized.
+2025-10-31 14:47:28.298 -03:00 [INF] Logging initialized.
+2025-10-31 14:47:33.517 -03:00 [INF] Logging initialized.
+2025-10-31 14:48:02.547 -03:00 [INF] Logging initialized.
+2025-10-31 14:48:08.083 -03:00 [INF] Logging initialized.
+2025-10-31 14:48:35.579 -03:00 [INF] Logging initialized.
+2025-10-31 14:49:10.914 -03:00 [INF] Logging initialized.
+2025-10-31 14:49:35.105 -03:00 [INF] Logging initialized.
+2025-10-31 14:50:09.222 -03:00 [INF] Logging initialized.
+2025-10-31 14:50:44.092 -03:00 [INF] Logging initialized.
+2025-10-31 14:50:50.265 -03:00 [INF] Logging initialized.
+2025-10-31 14:50:58.121 -03:00 [INF] Logging initialized.
+2025-10-31 14:50:58.239 -03:00 [INF] Verificando se é necessário marcar migration como aplicada...
+2025-10-31 14:50:59.941 -03:00 [INF] Migration '20251030143956_Primeira' verificada/marcada como aplicada.
+2025-10-31 14:51:12.524 -03:00 [INF] Logging initialized.
+2025-10-31 14:51:20.376 -03:00 [INF] Logging initialized.
+2025-10-31 14:51:26.385 -03:00 [INF] Logging initialized.
+2025-10-31 14:51:26.482 -03:00 [INF] Verificando se é necessário marcar migration como aplicada...
+2025-10-31 14:51:28.286 -03:00 [INF] Migration '20251030143956_Primeira' verificada/marcada como aplicada.
+2025-10-31 15:05:36.126 -03:00 [INF] Logging initialized.
+2025-10-31 15:05:42.568 -03:00 [INF] Logging initialized.
+2025-10-31 15:05:42.671 -03:00 [INF] Verificando se é necessário marcar migration como aplicada...
+2025-10-31 15:05:44.258 -03:00 [INF] Migration '20251030143956_Primeira' verificada/marcada como aplicada.
+2025-10-31 15:05:59.261 -03:00 [INF] Logging initialized.
+2025-10-31 15:06:04.905 -03:00 [INF] Logging initialized.
+2025-10-31 15:06:05.002 -03:00 [INF] Verificando se é necessário marcar migration como aplicada...
+2025-10-31 15:06:06.586 -03:00 [INF] Migration '20251030143956_Primeira' verificada/marcada como aplicada.
+2025-10-31 15:21:45.152 -03:00 [INF] Usuário larissarabelolf@gmail.com autenticado com sucesso.
+gging initialized.
+2025-10-31 15:06:21.315 -03:00 [INF] Verificando se é necessário marcar migration como aplicada...
+2025-10-31 15:06:22.960 -03:00 [INF] Migration '20251030143956_Primeira' verificada/marcada como aplicada.

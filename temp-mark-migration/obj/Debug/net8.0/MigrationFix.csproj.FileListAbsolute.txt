@@ -1,0 +1,2 @@
+/Users/larissarabelo/Developer/anaclara/GitHub/trainmaster-api/temp-mark-migration/obj/Debug/net8.0/MigrationFix.csproj.AssemblyReference.cache
+/Users/larissarabelo/Developer/anaclara/GitHub/trainmaster-api/temp-mark-migration/obj/Debug/net8.0/MigrationFix.GeneratedMSBuildEditorConfig.editorconfig

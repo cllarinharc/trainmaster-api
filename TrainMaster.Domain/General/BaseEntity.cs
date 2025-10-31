@@ -19,6 +19,7 @@ namespace TrainMaster.Domain.General
         protected BaseEntity()
         {
             CreateDate = DateTime.UtcNow;
+
         }
     }
 }

@@ -36,6 +36,7 @@ namespace TrainMaster.Infrastracture.Connections
         public DbSet<ExamEntity> ExamEntity { get; set; }
         public DbSet<ExamQuestionEntity> ExamQuestionEntity { get; set; }
         public DbSet<BadgeEntity> BadgeEntity { get; set; }
+        public DbSet<UserBadgeEntity> UserBadgeEntity { get; set; }
         public DbSet<FaqEntity> FaqEntity { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

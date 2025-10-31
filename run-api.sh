@@ -98,21 +98,19 @@ run_migrations() {
 
     cd TrainMaster
 
-    # Verifica se há migrations pendentes
-    MIGRATIONS_PENDING=$(dotnet ef migrations list | grep -c "No migrations" || true)
-
-    if [ "$MIGRATIONS_PENDING" -eq 0 ]; then
-        print_info "Aplicando migrations..."
-        dotnet ef database update
-
-        if [ $? -eq 0 ]; then
-            print_success "Migrations aplicadas com sucesso"
+    # Tentar aplicar migrations
+    print_info "Aplicando migrations..."
+    if dotnet ef database update --no-build >/dev/null 2>&1; then
+        print_success "Migrations aplicadas com sucesso"
+    else
+        MIGRATION_OUTPUT=$(dotnet ef database update --no-build 2>&1 || true)
+        if echo "$MIGRATION_OUTPUT" | grep -qi "already exists\|relation.*exists"; then
+            print_warning "Tabelas já existem no banco."
+            print_info "A migration será marcada automaticamente quando a aplicação iniciar."
         else
             print_warning "Aviso: Houve problemas ao aplicar migrations"
             print_info "As migrations serão executadas automaticamente na inicialização da aplicação"
         fi
-    else
-        print_info "Nenhuma migration pendente encontrada"
     fi
 
     cd ..

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TrainMaster.Application")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1f193deec8028fb2fde4547ef75b36cb183d78fa")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+88336166c8c30991db103c00c95572372ab1ad58")]
 [assembly: System.Reflection.AssemblyProductAttribute("TrainMaster.Application")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TrainMaster.Application")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
