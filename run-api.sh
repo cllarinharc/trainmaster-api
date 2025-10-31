@@ -160,9 +160,9 @@ check_configuration() {
 run_application() {
     print_info "Iniciando aplicação..."
     print_info "A aplicação estará disponível em:"
-    print_info "  - HTTP: http://localhost:5000"
+    print_info "  - HTTP: http://localhost:7009"
     print_info "  - HTTPS: https://localhost:5001"
-    print_info "  - Swagger: http://localhost:5000/swagger"
+    print_info "  - Swagger: http://localhost:7009/swagger"
     print_info ""
     print_info "Pressione Ctrl+C para parar a aplicação"
     print_info "============================================================================="

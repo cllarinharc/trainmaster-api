@@ -104,9 +104,9 @@ dotnet run
 
 Após a execução, a aplicação estará disponível em:
 
-- **HTTP**: http://localhost:5000
+- **HTTP**: http://localhost:7009
 - **HTTPS**: https://localhost:5001
-- **Swagger**: http://localhost:5000/swagger
+- **Swagger**: http://localhost:7009/swagger
 
 ### **3. Banco de Dados**
 
