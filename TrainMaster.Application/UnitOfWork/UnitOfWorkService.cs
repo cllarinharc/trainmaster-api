@@ -31,6 +31,7 @@ namespace TrainMaster.Application.UnitOfWork
         private FaqService faqService;
         private CalendarService calendarService;
         private ExamHistoryService examHistoryService;
+        private CourseEnrollmentService courseEnrollmentService;
 
         public UnitOfWorkService(IRepositoryUoW repositoryUoW, TokenService tokenService, BCryptoAlgorithm crypto)
         {
@@ -236,6 +237,16 @@ namespace TrainMaster.Application.UnitOfWork
                 if (notificationService is null)
                     notificationService = new NotificationService(_repositoryUoW);
                 return notificationService;
+            }
+        }
+
+        public CourseEnrollmentService CourseEnrollmentService
+        {
+            get
+            {
+                if (courseEnrollmentService is null)
+                    courseEnrollmentService = new CourseEnrollmentService(_repositoryUoW);
+                return courseEnrollmentService;
             }
         }
     }

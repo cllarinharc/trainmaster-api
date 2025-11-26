@@ -31,6 +31,7 @@ namespace TrainMaster.Infrastracture.Repository.RepositoryUoW
         private IFaqRepository _faqRepository = null;
         private ICalendarRepository _calendarRepository = null;
         private IExamHistoryRepository _examHistoryRepository = null;
+        private ICourseEnrollmentRepository _courseEnrollmentRepository = null;
 
         public RepositoryUoW(DataContext context)
         {
@@ -46,6 +47,18 @@ namespace TrainMaster.Infrastracture.Repository.RepositoryUoW
                     _examHistoryRepository = new ExamHistoryRepository(_context);
                 }
                 return _examHistoryRepository;
+            }
+        }
+
+        public ICourseEnrollmentRepository CourseEnrollmentRepository
+        {
+            get
+            {
+                if (_courseEnrollmentRepository is null)
+                {
+                    _courseEnrollmentRepository = new CourseEnrollmentRepository(_context);
+                }
+                return _courseEnrollmentRepository;
             }
         }
 

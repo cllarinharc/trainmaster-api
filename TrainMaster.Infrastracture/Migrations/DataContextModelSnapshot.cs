@@ -223,6 +223,43 @@ namespace TrainMaster.Infrastracture.Migrations
                     b.ToTable("CourseAvaliationEntity");
                 });
 
+            modelBuilder.Entity("TrainMaster.Domain.Entity.CourseEnrollmentEntity", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("CourseId")
+                        .HasColumnType("integer");
+
+                    b.Property<DateTime?>("CreateDate")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<DateTime>("EnrollmentDate")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("boolean");
+
+                    b.Property<DateTime?>("ModificationDate")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<int>("StudentId")
+                        .HasColumnType("integer");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CourseId");
+
+                    b.HasIndex("StudentId", "CourseId")
+                        .IsUnique()
+                        .HasFilter("\"IsActive\" = TRUE");
+
+                    b.ToTable("CourseEnrollmentEntity");
+                });
+
             modelBuilder.Entity("TrainMaster.Domain.Entity.CourseEntity", b =>
                 {
                     b.Property<int>("Id")
@@ -881,6 +918,25 @@ namespace TrainMaster.Infrastracture.Migrations
                         .OnDelete(DeleteBehavior.Cascade);
 
                     b.Navigation("Course");
+                });
+
+            modelBuilder.Entity("TrainMaster.Domain.Entity.CourseEnrollmentEntity", b =>
+                {
+                    b.HasOne("TrainMaster.Domain.Entity.CourseEntity", "Course")
+                        .WithMany()
+                        .HasForeignKey("CourseId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("TrainMaster.Domain.Entity.UserEntity", "Student")
+                        .WithMany()
+                        .HasForeignKey("StudentId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Course");
+
+                    b.Navigation("Student");
                 });
 
             modelBuilder.Entity("TrainMaster.Domain.Entity.CourseEntity", b =>

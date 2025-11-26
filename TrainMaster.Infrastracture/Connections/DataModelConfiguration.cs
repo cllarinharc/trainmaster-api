@@ -132,6 +132,27 @@ namespace TrainMaster.Infrastracture.Connections
                       .OnDelete(DeleteBehavior.Cascade);
             });
 
+            modelBuilder.Entity<CourseEnrollmentEntity>(entity =>
+            {
+                entity.HasKey(e => e.Id);
+                entity.Property(e => e.EnrollmentDate).IsRequired();
+                entity.Property(e => e.IsActive).IsRequired();
+
+                entity.HasOne(e => e.Student)
+                      .WithMany()
+                      .HasForeignKey(e => e.StudentId)
+                      .OnDelete(DeleteBehavior.Restrict);
+
+                entity.HasOne(e => e.Course)
+                      .WithMany()
+                      .HasForeignKey(e => e.CourseId)
+                      .OnDelete(DeleteBehavior.Restrict);
+
+                entity.HasIndex(e => new { e.StudentId, e.CourseId })
+                      .IsUnique()
+                      .HasFilter("\"IsActive\" = TRUE");
+            });
+
             modelBuilder.Entity<DepartmentEntity>(entity =>
             {
                 entity.HasKey(d => d.Id);
