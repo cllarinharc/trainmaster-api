@@ -84,7 +84,9 @@ namespace TrainMaster.Infrastracture.Repository.Request
 
         public async Task<UserEntity?> GetByCpf(string? cpf)
         {
-            return await _context.UserEntity.FirstOrDefaultAsync(userEntity => userEntity.Cpf == cpf);
+            return await _context.UserEntity
+                .Include(u => u.PessoalProfile)
+                .FirstOrDefaultAsync(userEntity => userEntity.Cpf == cpf);
         }
 
         public UserEntity Update(UserEntity userEntity)

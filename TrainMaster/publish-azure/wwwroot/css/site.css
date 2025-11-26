@@ -1,0 +1,110 @@
+﻿/* ==================== Botões ==================== */
+.button-group {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.btn {
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-save {
+    background-color: #20b2aa;
+    color: white;
+}
+
+    .btn-save:hover {
+        background-color: #199b94;
+    }
+
+.btn-cancel {
+    background-color: #ccc;
+    color: #333;
+}
+
+    .btn-cancel:hover {
+        background-color: #aaa;
+    }
+
+/* ==================== Texto ==================== */
+.text-vermelho {
+    color: red;
+}
+
+.text-danger {
+    color: #e53935;
+    font-size: 0.85rem;
+}
+
+/* ==================== Containers e Forms ==================== */
+.form-container {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+    .form-container h2 {
+        color: #20b2aa;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+.form-box {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-group label {
+    font-weight: 600;
+    margin-bottom: 5px;
+    display: block;
+    color: #333;
+}
+
+.input-field {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+/* ==================== Alertas ==================== */
+.alert {
+    background-color: #ffe0e0;
+    color: #b00020;
+    padding: 10px 15px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+    text-align: center;
+}
+
+/* ==================== Tabelas ==================== */
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tbody tr:hover {
+    background-color: #e6f7f6;
+}
+
+td.descricao {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 400px;
+}

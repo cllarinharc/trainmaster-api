@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TrainMaster.Shared")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6ce6d30abcb3d7e7789e0cfe08edda21d17def31")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+897ef844191ce3054441dd1b808dc4857797dec6")]
 [assembly: System.Reflection.AssemblyProductAttribute("TrainMaster.Shared")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TrainMaster.Shared")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

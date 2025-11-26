@@ -54,9 +54,14 @@ namespace TrainMaster.Application.Services
                 {                    
                     Cpf = user.Cpf,
                     Id = user.Id,
+                    Email = user.Email,
+                    FullName = user.PessoalProfile?.FullName,
+                    DateOfBirth = user.PessoalProfile?.DateOfBirth
                 };
 
-                return Result<LoginDto>.OkLogin(loginEntity);
+                var result = Result<LoginDto>.OkLogin(loginEntity);
+                result.AccessToken = token;
+                return result;
             }
             catch (Exception ex)
             {

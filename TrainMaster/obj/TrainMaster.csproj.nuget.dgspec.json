@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/larissarabelo/Developer/anaclara/GitHub/trainmaster-api/TrainMaster/TrainMaster.csproj": {}
+    "/Users/larissarabelo/Developer/pessoal/anaclara/trainmaster-api/TrainMaster/TrainMaster.csproj": {}
   },
   "projects": {
-    "/Users/larissarabelo/Developer/anaclara/GitHub/trainmaster-api/TrainMaster.Application/TrainMaster.Application.csproj": {
+    "/Users/larissarabelo/Developer/pessoal/anaclara/trainmaster-api/TrainMaster.Application/TrainMaster.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/larissarabelo/Developer/anaclara/GitHub/trainmaster-api/TrainMaster.Application/TrainMaster.Application.csproj",
+        "projectUniqueName": "/Users/larissarabelo/Developer/pessoal/anaclara/trainmaster-api/TrainMaster.Application/TrainMaster.Application.csproj",
         "projectName": "TrainMaster.Application",
-        "projectPath": "/Users/larissarabelo/Developer/anaclara/GitHub/trainmaster-api/TrainMaster.Application/TrainMaster.Application.csproj",
+        "projectPath": "/Users/larissarabelo/Developer/pessoal/anaclara/trainmaster-api/TrainMaster.Application/TrainMaster.Application.csproj",
         "packagesPath": "/Users/larissarabelo/.nuget/packages/",
-        "outputPath": "/Users/larissarabelo/Developer/anaclara/GitHub/trainmaster-api/TrainMaster.Application/obj/",
+        "outputPath": "/Users/larissarabelo/Developer/pessoal/anaclara/trainmaster-api/TrainMaster.Application/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/larissarabelo/.nuget/NuGet/NuGet.Config"
@@ -26,14 +26,14 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/Users/larissarabelo/Developer/anaclara/GitHub/trainmaster-api/TrainMaster.Domain/TrainMaster.Domain.csproj": {
-                "projectPath": "/Users/larissarabelo/Developer/anaclara/GitHub/trainmaster-api/TrainMaster.Domain/TrainMaster.Domain.csproj"
+              "/Users/larissarabelo/Developer/pessoal/anaclara/trainmaster-api/TrainMaster.Domain/TrainMaster.Domain.csproj": {
+                "projectPath": "/Users/larissarabelo/Developer/pessoal/anaclara/trainmaster-api/TrainMaster.Domain/TrainMaster.Domain.csproj"
               },
-              "/Users/larissarabelo/Developer/anaclara/GitHub/trainmaster-api/TrainMaster.Infrastracture/TrainMaster.Infrastracture.csproj": {
-                "projectPath": "/Users/larissarabelo/Developer/anaclara/GitHub/trainmaster-api/TrainMaster.Infrastracture/TrainMaster.Infrastracture.csproj"
+              "/Users/larissarabelo/Developer/pessoal/anaclara/trainmaster-api/TrainMaster.Infrastracture/TrainMaster.Infrastracture.csproj": {
+                "projectPath": "/Users/larissarabelo/Developer/pessoal/anaclara/trainmaster-api/TrainMaster.Infrastracture/TrainMaster.Infrastracture.csproj"
               },
-              "/Users/larissarabelo/Developer/anaclara/GitHub/trainmaster-api/TrainMaster.Shared/TrainMaster.Shared.csproj": {
-                "projectPath": "/Users/larissarabelo/Developer/anaclara/GitHub/trainmaster-api/TrainMaster.Shared/TrainMaster.Shared.csproj"
+              "/Users/larissarabelo/Developer/pessoal/anaclara/trainmaster-api/TrainMaster.Shared/TrainMaster.Shared.csproj": {
+                "projectPath": "/Users/larissarabelo/Developer/pessoal/anaclara/trainmaster-api/TrainMaster.Shared/TrainMaster.Shared.csproj"
               }
             }
           }
@@ -123,14 +123,14 @@
         }
       }
     },
-    "/Users/larissarabelo/Developer/anaclara/GitHub/trainmaster-api/TrainMaster.Domain/TrainMaster.Domain.csproj": {
+    "/Users/larissarabelo/Developer/pessoal/anaclara/trainmaster-api/TrainMaster.Domain/TrainMaster.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/larissarabelo/Developer/anaclara/GitHub/trainmaster-api/TrainMaster.Domain/TrainMaster.Domain.csproj",
+        "projectUniqueName": "/Users/larissarabelo/Developer/pessoal/anaclara/trainmaster-api/TrainMaster.Domain/TrainMaster.Domain.csproj",
         "projectName": "TrainMaster.Domain",
-        "projectPath": "/Users/larissarabelo/Developer/anaclara/GitHub/trainmaster-api/TrainMaster.Domain/TrainMaster.Domain.csproj",
+        "projectPath": "/Users/larissarabelo/Developer/pessoal/anaclara/trainmaster-api/TrainMaster.Domain/TrainMaster.Domain.csproj",
         "packagesPath": "/Users/larissarabelo/.nuget/packages/",
-        "outputPath": "/Users/larissarabelo/Developer/anaclara/GitHub/trainmaster-api/TrainMaster.Domain/obj/",
+        "outputPath": "/Users/larissarabelo/Developer/pessoal/anaclara/trainmaster-api/TrainMaster.Domain/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/larissarabelo/.nuget/NuGet/NuGet.Config"
@@ -232,14 +232,14 @@
         }
       }
     },
-    "/Users/larissarabelo/Developer/anaclara/GitHub/trainmaster-api/TrainMaster.Infrastracture/TrainMaster.Infrastracture.csproj": {
+    "/Users/larissarabelo/Developer/pessoal/anaclara/trainmaster-api/TrainMaster.Infrastracture/TrainMaster.Infrastracture.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/larissarabelo/Developer/anaclara/GitHub/trainmaster-api/TrainMaster.Infrastracture/TrainMaster.Infrastracture.csproj",
+        "projectUniqueName": "/Users/larissarabelo/Developer/pessoal/anaclara/trainmaster-api/TrainMaster.Infrastracture/TrainMaster.Infrastracture.csproj",
         "projectName": "TrainMaster.Infrastracture",
-        "projectPath": "/Users/larissarabelo/Developer/anaclara/GitHub/trainmaster-api/TrainMaster.Infrastracture/TrainMaster.Infrastracture.csproj",
+        "projectPath": "/Users/larissarabelo/Developer/pessoal/anaclara/trainmaster-api/TrainMaster.Infrastracture/TrainMaster.Infrastracture.csproj",
         "packagesPath": "/Users/larissarabelo/.nuget/packages/",
-        "outputPath": "/Users/larissarabelo/Developer/anaclara/GitHub/trainmaster-api/TrainMaster.Infrastracture/obj/",
+        "outputPath": "/Users/larissarabelo/Developer/pessoal/anaclara/trainmaster-api/TrainMaster.Infrastracture/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/larissarabelo/.nuget/NuGet/NuGet.Config"
@@ -254,8 +254,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/Users/larissarabelo/Developer/anaclara/GitHub/trainmaster-api/TrainMaster.Domain/TrainMaster.Domain.csproj": {
-                "projectPath": "/Users/larissarabelo/Developer/anaclara/GitHub/trainmaster-api/TrainMaster.Domain/TrainMaster.Domain.csproj"
+              "/Users/larissarabelo/Developer/pessoal/anaclara/trainmaster-api/TrainMaster.Domain/TrainMaster.Domain.csproj": {
+                "projectPath": "/Users/larissarabelo/Developer/pessoal/anaclara/trainmaster-api/TrainMaster.Domain/TrainMaster.Domain.csproj"
               }
             }
           }
@@ -305,14 +305,14 @@
         }
       }
     },
-    "/Users/larissarabelo/Developer/anaclara/GitHub/trainmaster-api/TrainMaster.Shared/TrainMaster.Shared.csproj": {
+    "/Users/larissarabelo/Developer/pessoal/anaclara/trainmaster-api/TrainMaster.Shared/TrainMaster.Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/larissarabelo/Developer/anaclara/GitHub/trainmaster-api/TrainMaster.Shared/TrainMaster.Shared.csproj",
+        "projectUniqueName": "/Users/larissarabelo/Developer/pessoal/anaclara/trainmaster-api/TrainMaster.Shared/TrainMaster.Shared.csproj",
         "projectName": "TrainMaster.Shared",
-        "projectPath": "/Users/larissarabelo/Developer/anaclara/GitHub/trainmaster-api/TrainMaster.Shared/TrainMaster.Shared.csproj",
+        "projectPath": "/Users/larissarabelo/Developer/pessoal/anaclara/trainmaster-api/TrainMaster.Shared/TrainMaster.Shared.csproj",
         "packagesPath": "/Users/larissarabelo/.nuget/packages/",
-        "outputPath": "/Users/larissarabelo/Developer/anaclara/GitHub/trainmaster-api/TrainMaster.Shared/obj/",
+        "outputPath": "/Users/larissarabelo/Developer/pessoal/anaclara/trainmaster-api/TrainMaster.Shared/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/larissarabelo/.nuget/NuGet/NuGet.Config"
@@ -327,8 +327,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/Users/larissarabelo/Developer/anaclara/GitHub/trainmaster-api/TrainMaster.Domain/TrainMaster.Domain.csproj": {
-                "projectPath": "/Users/larissarabelo/Developer/anaclara/GitHub/trainmaster-api/TrainMaster.Domain/TrainMaster.Domain.csproj"
+              "/Users/larissarabelo/Developer/pessoal/anaclara/trainmaster-api/TrainMaster.Domain/TrainMaster.Domain.csproj": {
+                "projectPath": "/Users/larissarabelo/Developer/pessoal/anaclara/trainmaster-api/TrainMaster.Domain/TrainMaster.Domain.csproj"
               }
             }
           }
@@ -418,14 +418,14 @@
         }
       }
     },
-    "/Users/larissarabelo/Developer/anaclara/GitHub/trainmaster-api/TrainMaster/TrainMaster.csproj": {
+    "/Users/larissarabelo/Developer/pessoal/anaclara/trainmaster-api/TrainMaster/TrainMaster.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/larissarabelo/Developer/anaclara/GitHub/trainmaster-api/TrainMaster/TrainMaster.csproj",
+        "projectUniqueName": "/Users/larissarabelo/Developer/pessoal/anaclara/trainmaster-api/TrainMaster/TrainMaster.csproj",
         "projectName": "TrainMaster",
-        "projectPath": "/Users/larissarabelo/Developer/anaclara/GitHub/trainmaster-api/TrainMaster/TrainMaster.csproj",
+        "projectPath": "/Users/larissarabelo/Developer/pessoal/anaclara/trainmaster-api/TrainMaster/TrainMaster.csproj",
         "packagesPath": "/Users/larissarabelo/.nuget/packages/",
-        "outputPath": "/Users/larissarabelo/Developer/anaclara/GitHub/trainmaster-api/TrainMaster/obj/",
+        "outputPath": "/Users/larissarabelo/Developer/pessoal/anaclara/trainmaster-api/TrainMaster/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/larissarabelo/.nuget/NuGet/NuGet.Config"
@@ -440,8 +440,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/Users/larissarabelo/Developer/anaclara/GitHub/trainmaster-api/TrainMaster.Application/TrainMaster.Application.csproj": {
-                "projectPath": "/Users/larissarabelo/Developer/anaclara/GitHub/trainmaster-api/TrainMaster.Application/TrainMaster.Application.csproj"
+              "/Users/larissarabelo/Developer/pessoal/anaclara/trainmaster-api/TrainMaster.Application/TrainMaster.Application.csproj": {
+                "projectPath": "/Users/larissarabelo/Developer/pessoal/anaclara/trainmaster-api/TrainMaster.Application/TrainMaster.Application.csproj"
               }
             }
           }

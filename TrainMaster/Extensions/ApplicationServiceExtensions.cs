@@ -52,13 +52,7 @@ namespace TrainMaster.Extensions
                 opt.UseNpgsql(config.GetConnectionString("WebApiDatabase"));
             });
 
-            services.AddCors(opt =>
-            {
-                opt.AddPolicy("CorsPolicy", policy =>
-                {
-                    policy.AllowAnyMethod().AllowAnyHeader().WithOrigins("http://localhost:4200");
-                });
-            });
+            // CORS configurado no Program.cs - removido para evitar conflito
             services.AddScoped<IRepositoryUoW, RepositoryUoW>();
             services.AddScoped<TokenService>();
             services.AddScoped<BCryptoAlgorithm>();

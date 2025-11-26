@@ -23,21 +23,9 @@ builder.Services.AddCors(options =>
 {
     options.AddDefaultPolicy(policy =>
         policy
-            .SetIsOriginAllowed(origin =>
-            {
-                // Allow localhost for development
-                if (origin.StartsWith("http://localhost:", StringComparison.OrdinalIgnoreCase))
-                    return true;
-                if (origin.StartsWith("http://127.0.0.1:", StringComparison.OrdinalIgnoreCase))
-                    return true;
-                if (origin.StartsWith("https://localhost:", StringComparison.OrdinalIgnoreCase))
-                    return true;
-                // Allow any origin for production (customize as needed)
-                return true;
-            })
+            .AllowAnyOrigin()
             .AllowAnyHeader()
-            .AllowAnyMethod()
-            .AllowCredentials());
+            .AllowAnyMethod());
 });
 
 
