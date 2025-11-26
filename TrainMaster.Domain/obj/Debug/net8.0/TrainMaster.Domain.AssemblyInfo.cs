@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TrainMaster.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9364337ec1fd15d91019f262f343fe7b4f9281cd")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+25d75fa4980dd39117214658c6e3ad3f1af5d5be")]
 [assembly: System.Reflection.AssemblyProductAttribute("TrainMaster.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TrainMaster.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

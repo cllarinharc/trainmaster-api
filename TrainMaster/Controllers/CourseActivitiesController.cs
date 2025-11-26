@@ -24,9 +24,14 @@ namespace TrainMaster.Api.Controllers
             if (courseId <= 0)
                 return BadRequest(new { message = "CourseId inválido." });
 
+            // Verificar se o curso existe
+            var course = await _uow.CourseService.GetById(courseId);
+            if (!course.Success || course.Data == null)
+                return NotFound(new { message = $"Curso com ID {courseId} não encontrado." });
+
             var activities = await _uow.CourseActivitieService.GetByCourseId(courseId);
             if (activities is null || !activities.Any())
-                return NotFound(new { message = "Nenhuma atividade encontrada para este curso." });
+                return NotFound(new { message = $"Nenhuma atividade encontrada para o curso ID {courseId}." });
 
             var allQuestions = new List<QuestionEntity>();
             foreach (var activity in activities)
@@ -62,7 +67,7 @@ namespace TrainMaster.Api.Controllers
         public async Task<IActionResult> Add([FromBody] CourseActivitieAddDto dto)
         {
             if (!ModelState.IsValid)
-                return ValidationProblem(ModelState); 
+                return ValidationProblem(ModelState);
 
             var entity = new CourseActivitieEntity
             {
@@ -70,7 +75,7 @@ namespace TrainMaster.Api.Controllers
                 Description = dto.Description,
                 StartDate = DateTime.SpecifyKind(dto.StartDate, DateTimeKind.Utc),
                 DueDate = DateTime.SpecifyKind(dto.DueDate, DateTimeKind.Utc),
-                MaxScore = dto.MaxScore,    
+                MaxScore = dto.MaxScore,
                 CourseId = dto.CourseId,
                 ModificationDate = DateTime.UtcNow
             };
