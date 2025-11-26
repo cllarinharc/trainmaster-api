@@ -183,3 +183,4 @@ A aplicação está online, funcionando e pronta para uso em:
 - **URL Principal:** https://trainmaster-api-new-1764190177.azurewebsites.net
 - **Swagger:** https://trainmaster-api-new-1764190177.azurewebsites.net/swagger
 
+

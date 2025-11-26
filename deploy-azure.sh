@@ -215,3 +215,4 @@ else
     echo -e "${GREEN}URL da aplicação: $APP_URL${NC}"
 fi
 
+
