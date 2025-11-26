@@ -54,10 +54,10 @@ namespace TrainMaster.Infrastracture.Connections
             modelBuilder.Entity<PessoalProfileEntity>(entity =>
             {
                 entity.HasKey(p => p.Id);
-                entity.Property(p => p.FullName).IsRequired().HasMaxLength(255);
-                entity.Property(p => p.DateOfBirth).IsRequired();
-                entity.Property(p => p.Gender).IsRequired().HasMaxLength(50);
-                entity.Property(p => p.Marital).IsRequired().HasMaxLength(50);
+                entity.Property(p => p.FullName).HasMaxLength(255);
+                entity.Property(p => p.DateOfBirth);
+                entity.Property(p => p.Gender).HasMaxLength(50);
+                entity.Property(p => p.Marital).HasMaxLength(50);
 
                 entity.HasOne(p => p.Address)
                       .WithOne(a => a.PessoalProfile)
@@ -308,12 +308,12 @@ namespace TrainMaster.Infrastracture.Connections
                 entity.Property(h => h.Status).IsRequired();
 
                 entity.HasOne(h => h.Exam)
-                      .WithMany() 
+                      .WithMany()
                       .HasForeignKey(h => h.ExamId)
                       .OnDelete(DeleteBehavior.Cascade);
 
                 entity.HasOne(h => h.Student)
-                      .WithMany() 
+                      .WithMany()
                       .HasForeignKey(h => h.StudentId)
                       .OnDelete(DeleteBehavior.Restrict);
 

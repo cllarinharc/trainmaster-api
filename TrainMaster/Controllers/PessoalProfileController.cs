@@ -24,9 +24,14 @@ namespace TrainMaster.Controllers
         }
 
         [HttpPut("Update/{id:int}")]
-        public async Task<IActionResult> Update([FromRoute] int id, [FromBody] PessoalProfilePartDto perfil)
+        public async Task<IActionResult> Update([FromRoute] int id, [FromBody] UpdateProfileRequestDto request)
         {
-            var result = await _uow.ProfilePessoalService.Update(id, perfil);
+            if (request.perfil == null)
+            {
+                return BadRequest("O campo 'perfil' é obrigatório.");
+            }
+
+            var result = await _uow.ProfilePessoalService.Update(id, request.perfil);
             return Ok(result);
         }
 

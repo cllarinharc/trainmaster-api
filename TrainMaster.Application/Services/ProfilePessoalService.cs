@@ -121,13 +121,30 @@ namespace TrainMaster.Application.Services
             try
             {
                 var pessoalProfileById = await _repositoryUoW.PessoalProfileRepository.GetById(id);
-                pessoalProfileById.FullName = pessoalProfileEntity.FullName;
-                pessoalProfileById.Cpf = pessoalProfileEntity.Cpf;
-                pessoalProfileById.Email = pessoalProfileEntity.Email;
-                pessoalProfileById.ModificationDate = DateTime.UtcNow;
-                pessoalProfileById.DateOfBirth = DateTime.SpecifyKind(pessoalProfileEntity.DateOfBirth, DateTimeKind.Utc);
+
+                if (pessoalProfileById == null)
+                {
+                    return Result<PessoalProfileEntity>.Error("Perfil não encontrado.");
+                }
+
+                // Atualiza os campos fornecidos
+                if (pessoalProfileEntity.FullName != null)
+                    pessoalProfileById.FullName = pessoalProfileEntity.FullName;
+
+                if (pessoalProfileEntity.Cpf != null)
+                    pessoalProfileById.Cpf = pessoalProfileEntity.Cpf;
+
+                if (pessoalProfileEntity.Email != null)
+                    pessoalProfileById.Email = pessoalProfileEntity.Email;
+
+                if (pessoalProfileEntity.DateOfBirth.HasValue)
+                    pessoalProfileById.DateOfBirth = DateTime.SpecifyKind(pessoalProfileEntity.DateOfBirth.Value, DateTimeKind.Utc);
+
+                // Atualiza Gender e Marital sempre que fornecidos
                 pessoalProfileById.Gender = pessoalProfileEntity.Gender;
                 pessoalProfileById.Marital = pessoalProfileEntity.Marital;
+
+                pessoalProfileById.ModificationDate = DateTime.UtcNow;
 
                 _repositoryUoW.PessoalProfileRepository.Update(pessoalProfileById);
 

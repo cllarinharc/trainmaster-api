@@ -1,0 +1,5 @@
+/Users/larissarabelo/Developer/pessoal/anaclara/trainmaster-api/obj/Debug/net8.0/mark-migration.csproj.AssemblyReference.cache
+/Users/larissarabelo/Developer/pessoal/anaclara/trainmaster-api/obj/Debug/net8.0/mark-migration.GeneratedMSBuildEditorConfig.editorconfig
+/Users/larissarabelo/Developer/pessoal/anaclara/trainmaster-api/obj/Debug/net8.0/mark-migration.AssemblyInfoInputs.cache
+/Users/larissarabelo/Developer/pessoal/anaclara/trainmaster-api/obj/Debug/net8.0/mark-migration.AssemblyInfo.cs
+/Users/larissarabelo/Developer/pessoal/anaclara/trainmaster-api/obj/Debug/net8.0/mark-migration.csproj.CoreCompileInputs.cache

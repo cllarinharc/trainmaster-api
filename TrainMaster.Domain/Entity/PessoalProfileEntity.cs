@@ -9,7 +9,7 @@ namespace TrainMaster.Domain.Entity
         public string? FullName { get; set; }
         public string? Cpf { get; set; }
         public string? Email { get; set; }
-        public DateTime DateOfBirth { get; set; }
+        public DateTime? DateOfBirth { get; set; }
         public GenderStatus Gender { get; set; }
         public MaritalStatus Marital { get; set; }
 
