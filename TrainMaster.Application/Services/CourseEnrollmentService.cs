@@ -167,20 +167,69 @@ namespace TrainMaster.Application.Services
                     var progress = await _repositoryUoW.CourseProgressRepository.GetByStudentAndCourse(studentId, e.CourseId);
                     if (progress != null)
                     {
-                        dto.ProgressPercentage = progress.ProgressPercentage;
-                        dto.CompletedActivitiesCount = progress.CompletedActivitiesCount;
-                        dto.TotalActivitiesCount = progress.TotalActivitiesCount;
-                        dto.IsCompleted = progress.IsCompleted;
-                        dto.CompletedDate = progress.CompletedDate;
-                        dto.LastActivityDate = progress.LastActivityDate;
+                        // Verificar se o progresso precisa ser atualizado
+                        // Se o TotalActivitiesCount está 0 mas o curso tem atividades, atualizar
+                        var activities = await _repositoryUoW.CourseActivitieRepository.GetByCourseId(e.CourseId);
+                        var totalActivities = activities.Count;
+
+                        if (progress.TotalActivitiesCount == 0 && totalActivities > 0)
+                        {
+                            // Atualizar o progresso se o totalActivitiesCount estiver desatualizado
+                            var courseProgressService = new CourseProgressService(_repositoryUoW);
+                            var updateResult = await courseProgressService.UpdateProgress(studentId, e.CourseId);
+                            if (updateResult.Success && updateResult.Data != null)
+                            {
+                                dto.ProgressPercentage = updateResult.Data.ProgressPercentage;
+                                dto.CompletedActivitiesCount = updateResult.Data.CompletedActivitiesCount;
+                                dto.TotalActivitiesCount = updateResult.Data.TotalActivitiesCount;
+                                dto.IsCompleted = updateResult.Data.IsCompleted;
+                                dto.CompletedDate = updateResult.Data.CompletedDate;
+                                dto.LastActivityDate = updateResult.Data.LastActivityDate;
+                            }
+                            else
+                            {
+                                // Se falhar ao atualizar, usar valores do banco
+                                dto.ProgressPercentage = progress.ProgressPercentage;
+                                dto.CompletedActivitiesCount = progress.CompletedActivitiesCount;
+                                dto.TotalActivitiesCount = progress.TotalActivitiesCount;
+                                dto.IsCompleted = progress.IsCompleted;
+                                dto.CompletedDate = progress.CompletedDate;
+                                dto.LastActivityDate = progress.LastActivityDate;
+                            }
+                        }
+                        else
+                        {
+                            // Usar valores do banco diretamente
+                            dto.ProgressPercentage = progress.ProgressPercentage;
+                            dto.CompletedActivitiesCount = progress.CompletedActivitiesCount;
+                            dto.TotalActivitiesCount = progress.TotalActivitiesCount;
+                            dto.IsCompleted = progress.IsCompleted;
+                            dto.CompletedDate = progress.CompletedDate;
+                            dto.LastActivityDate = progress.LastActivityDate;
+                        }
                     }
                     else
                     {
-                        // Se não há progresso, inicializar com valores padrão
-                        dto.ProgressPercentage = 0;
-                        dto.CompletedActivitiesCount = 0;
-                        dto.TotalActivitiesCount = 0;
-                        dto.IsCompleted = false;
+                        // Se não há progresso, tentar criar
+                        var courseProgressService = new CourseProgressService(_repositoryUoW);
+                        var createResult = await courseProgressService.GetOrCreateProgress(studentId, e.CourseId);
+                        if (createResult.Success && createResult.Data != null)
+                        {
+                            dto.ProgressPercentage = createResult.Data.ProgressPercentage;
+                            dto.CompletedActivitiesCount = createResult.Data.CompletedActivitiesCount;
+                            dto.TotalActivitiesCount = createResult.Data.TotalActivitiesCount;
+                            dto.IsCompleted = createResult.Data.IsCompleted;
+                            dto.CompletedDate = createResult.Data.CompletedDate;
+                            dto.LastActivityDate = createResult.Data.LastActivityDate;
+                        }
+                        else
+                        {
+                            // Se falhar, inicializar com valores padrão
+                            dto.ProgressPercentage = 0;
+                            dto.CompletedActivitiesCount = 0;
+                            dto.TotalActivitiesCount = 0;
+                            dto.IsCompleted = false;
+                        }
                     }
 
                     result.Add(dto);
