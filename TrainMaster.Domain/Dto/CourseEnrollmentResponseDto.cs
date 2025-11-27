@@ -17,6 +17,14 @@ namespace TrainMaster.Domain.Dto
         public DateTime CourseStartDate { get; set; }
         public DateTime CourseEndDate { get; set; }
         public bool CourseIsActive { get; set; }
+
+        // Informações de progresso
+        public decimal? ProgressPercentage { get; set; }
+        public int? CompletedActivitiesCount { get; set; }
+        public int? TotalActivitiesCount { get; set; }
+        public bool? IsCompleted { get; set; }
+        public DateTime? CompletedDate { get; set; }
+        public DateTime? LastActivityDate { get; set; }
     }
 }
 

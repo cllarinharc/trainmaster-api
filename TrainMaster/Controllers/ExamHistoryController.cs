@@ -20,7 +20,7 @@ namespace TrainMaster.Controllers
 
         [HttpPost]
         [Consumes(MediaTypeNames.Application.Json)]
-        [ProducesResponseType(typeof(ExamHistoryEntity), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ExamHistoryResponseDto), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> Add([FromBody] ExamHistoryDto dto)
         {
@@ -30,7 +30,7 @@ namespace TrainMaster.Controllers
             if (!ModelState.IsValid)
                 return ValidationProblem(ModelState);
 
-            var result = await _uow.ExamHistoryService.Add(dto);
+            var result = await _uow.ExamHistoryService.AddWithStatistics(dto);
 
             if (result.Success)
                 return Ok(result.Data);

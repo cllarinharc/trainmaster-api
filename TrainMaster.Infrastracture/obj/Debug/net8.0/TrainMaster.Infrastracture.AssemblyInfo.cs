@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TrainMaster.Infrastracture")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+22ead58ef4138dd8188328e54246293d1ee7a20e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b47b5bd37006915823f59e0497d9a50c3cfd4abf")]
 [assembly: System.Reflection.AssemblyProductAttribute("TrainMaster.Infrastracture")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TrainMaster.Infrastracture")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

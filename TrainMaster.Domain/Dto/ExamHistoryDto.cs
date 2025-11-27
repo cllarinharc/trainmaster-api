@@ -11,6 +11,9 @@ namespace TrainMaster.Domain.Dto
         public int? DurationSeconds { get; set; }
         public ExamAttemptStatus Status { get; set; }
         public decimal? Score { get; set; }
+        public int? AnsweredQuestions { get; set; } // Quantas questões foram respondidas
+        public int? CorrectAnswers { get; set; } // Quantas foram corretas
+        public decimal? ApprovalPercentage { get; set; } // Porcentagem mínima para aprovação (padrão 70%)
     }
 }
 

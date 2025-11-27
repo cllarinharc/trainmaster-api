@@ -142,22 +142,51 @@ namespace TrainMaster.Application.Services
             try
             {
                 var enrollments = await _repositoryUoW.CourseEnrollmentRepository.GetByStudentId(studentId);
-                return enrollments.Select(e => new CourseEnrollmentResponseDto
+                var result = new List<CourseEnrollmentResponseDto>();
+
+                foreach (var e in enrollments)
                 {
-                    Id = e.Id,
-                    StudentId = e.StudentId,
-                    CourseId = e.CourseId,
-                    EnrollmentDate = e.EnrollmentDate,
-                    IsActive = e.IsActive,
-                    CreateDate = e.CreateDate,
-                    ModificationDate = e.ModificationDate,
-                    CourseName = e.Course?.Name,
-                    CourseDescription = e.Course?.Description,
-                    CourseAuthor = e.Course?.Author,
-                    CourseStartDate = e.Course?.StartDate ?? DateTime.MinValue,
-                    CourseEndDate = e.Course?.EndDate ?? DateTime.MinValue,
-                    CourseIsActive = e.Course?.IsActive ?? false
-                }).ToList();
+                    var dto = new CourseEnrollmentResponseDto
+                    {
+                        Id = e.Id,
+                        StudentId = e.StudentId,
+                        CourseId = e.CourseId,
+                        EnrollmentDate = e.EnrollmentDate,
+                        IsActive = e.IsActive,
+                        CreateDate = e.CreateDate,
+                        ModificationDate = e.ModificationDate,
+                        CourseName = e.Course?.Name,
+                        CourseDescription = e.Course?.Description,
+                        CourseAuthor = e.Course?.Author,
+                        CourseStartDate = e.Course?.StartDate ?? DateTime.MinValue,
+                        CourseEndDate = e.Course?.EndDate ?? DateTime.MinValue,
+                        CourseIsActive = e.Course?.IsActive ?? false
+                    };
+
+                    // Buscar progresso do curso
+                    var progress = await _repositoryUoW.CourseProgressRepository.GetByStudentAndCourse(studentId, e.CourseId);
+                    if (progress != null)
+                    {
+                        dto.ProgressPercentage = progress.ProgressPercentage;
+                        dto.CompletedActivitiesCount = progress.CompletedActivitiesCount;
+                        dto.TotalActivitiesCount = progress.TotalActivitiesCount;
+                        dto.IsCompleted = progress.IsCompleted;
+                        dto.CompletedDate = progress.CompletedDate;
+                        dto.LastActivityDate = progress.LastActivityDate;
+                    }
+                    else
+                    {
+                        // Se não há progresso, inicializar com valores padrão
+                        dto.ProgressPercentage = 0;
+                        dto.CompletedActivitiesCount = 0;
+                        dto.TotalActivitiesCount = 0;
+                        dto.IsCompleted = false;
+                    }
+
+                    result.Add(dto);
+                }
+
+                return result;
             }
             catch (Exception ex)
             {
@@ -171,22 +200,50 @@ namespace TrainMaster.Application.Services
             try
             {
                 var enrollments = await _repositoryUoW.CourseEnrollmentRepository.GetByCourseId(courseId);
-                return enrollments.Select(e => new CourseEnrollmentResponseDto
+                var result = new List<CourseEnrollmentResponseDto>();
+
+                foreach (var e in enrollments)
                 {
-                    Id = e.Id,
-                    StudentId = e.StudentId,
-                    CourseId = e.CourseId,
-                    EnrollmentDate = e.EnrollmentDate,
-                    IsActive = e.IsActive,
-                    CreateDate = e.CreateDate,
-                    ModificationDate = e.ModificationDate,
-                    CourseName = e.Course?.Name,
-                    CourseDescription = e.Course?.Description,
-                    CourseAuthor = e.Course?.Author,
-                    CourseStartDate = e.Course?.StartDate ?? DateTime.MinValue,
-                    CourseEndDate = e.Course?.EndDate ?? DateTime.MinValue,
-                    CourseIsActive = e.Course?.IsActive ?? false
-                }).ToList();
+                    var dto = new CourseEnrollmentResponseDto
+                    {
+                        Id = e.Id,
+                        StudentId = e.StudentId,
+                        CourseId = e.CourseId,
+                        EnrollmentDate = e.EnrollmentDate,
+                        IsActive = e.IsActive,
+                        CreateDate = e.CreateDate,
+                        ModificationDate = e.ModificationDate,
+                        CourseName = e.Course?.Name,
+                        CourseDescription = e.Course?.Description,
+                        CourseAuthor = e.Course?.Author,
+                        CourseStartDate = e.Course?.StartDate ?? DateTime.MinValue,
+                        CourseEndDate = e.Course?.EndDate ?? DateTime.MinValue,
+                        CourseIsActive = e.Course?.IsActive ?? false
+                    };
+
+                    // Buscar progresso do curso
+                    var progress = await _repositoryUoW.CourseProgressRepository.GetByStudentAndCourse(e.StudentId, e.CourseId);
+                    if (progress != null)
+                    {
+                        dto.ProgressPercentage = progress.ProgressPercentage;
+                        dto.CompletedActivitiesCount = progress.CompletedActivitiesCount;
+                        dto.TotalActivitiesCount = progress.TotalActivitiesCount;
+                        dto.IsCompleted = progress.IsCompleted;
+                        dto.CompletedDate = progress.CompletedDate;
+                        dto.LastActivityDate = progress.LastActivityDate;
+                    }
+                    else
+                    {
+                        dto.ProgressPercentage = 0;
+                        dto.CompletedActivitiesCount = 0;
+                        dto.TotalActivitiesCount = 0;
+                        dto.IsCompleted = false;
+                    }
+
+                    result.Add(dto);
+                }
+
+                return result;
             }
             catch (Exception ex)
             {
@@ -211,6 +268,61 @@ namespace TrainMaster.Application.Services
             {
                 Log.Error(ex, "Erro ao buscar matrícula {EnrollmentId}", enrollmentId);
                 return Result<CourseEnrollmentEntity>.Error($"Erro ao buscar matrícula: {ex.Message}");
+            }
+        }
+
+        public async Task<Result<CourseEnrollmentResponseDto>> GetEnrollmentByIdWithProgress(int enrollmentId)
+        {
+            try
+            {
+                var enrollment = await _repositoryUoW.CourseEnrollmentRepository.GetById(enrollmentId);
+                if (enrollment == null)
+                {
+                    return Result<CourseEnrollmentResponseDto>.Error("Matrícula não encontrada.");
+                }
+
+                var dto = new CourseEnrollmentResponseDto
+                {
+                    Id = enrollment.Id,
+                    StudentId = enrollment.StudentId,
+                    CourseId = enrollment.CourseId,
+                    EnrollmentDate = enrollment.EnrollmentDate,
+                    IsActive = enrollment.IsActive,
+                    CreateDate = enrollment.CreateDate,
+                    ModificationDate = enrollment.ModificationDate,
+                    CourseName = enrollment.Course?.Name,
+                    CourseDescription = enrollment.Course?.Description,
+                    CourseAuthor = enrollment.Course?.Author,
+                    CourseStartDate = enrollment.Course?.StartDate ?? DateTime.MinValue,
+                    CourseEndDate = enrollment.Course?.EndDate ?? DateTime.MinValue,
+                    CourseIsActive = enrollment.Course?.IsActive ?? false
+                };
+
+                // Buscar progresso do curso
+                var progress = await _repositoryUoW.CourseProgressRepository.GetByStudentAndCourse(enrollment.StudentId, enrollment.CourseId);
+                if (progress != null)
+                {
+                    dto.ProgressPercentage = progress.ProgressPercentage;
+                    dto.CompletedActivitiesCount = progress.CompletedActivitiesCount;
+                    dto.TotalActivitiesCount = progress.TotalActivitiesCount;
+                    dto.IsCompleted = progress.IsCompleted;
+                    dto.CompletedDate = progress.CompletedDate;
+                    dto.LastActivityDate = progress.LastActivityDate;
+                }
+                else
+                {
+                    dto.ProgressPercentage = 0;
+                    dto.CompletedActivitiesCount = 0;
+                    dto.TotalActivitiesCount = 0;
+                    dto.IsCompleted = false;
+                }
+
+                return Result<CourseEnrollmentResponseDto>.Okedit(dto);
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex, "Erro ao buscar matrícula com progresso {EnrollmentId}", enrollmentId);
+                return Result<CourseEnrollmentResponseDto>.Error($"Erro ao buscar matrícula: {ex.Message}");
             }
         }
     }

@@ -11,6 +11,7 @@ namespace TrainMaster.Application.Services.Interfaces
         Task<List<CourseEnrollmentResponseDto>> GetEnrollmentsByStudent(int studentId);
         Task<List<CourseEnrollmentResponseDto>> GetEnrollmentsByCourse(int courseId);
         Task<Result<CourseEnrollmentEntity>> GetEnrollmentById(int enrollmentId);
+        Task<Result<CourseEnrollmentResponseDto>> GetEnrollmentByIdWithProgress(int enrollmentId);
     }
 }
 

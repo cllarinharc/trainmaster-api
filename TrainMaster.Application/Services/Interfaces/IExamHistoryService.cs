@@ -8,5 +8,6 @@ namespace TrainMaster.Application.Services.Interfaces
     {
         Task<List<ExamHistoryEntity>> GetByUserId(long userId);
         Task<Result<ExamHistoryEntity>> Add(ExamHistoryDto dto);
+        Task<Result<ExamHistoryResponseDto>> AddWithStatistics(ExamHistoryDto dto);
     }
 }

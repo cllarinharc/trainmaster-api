@@ -58,7 +58,7 @@ namespace TrainMaster.Controllers
         [HttpGet("{enrollmentId:int}")]
         public async Task<IActionResult> GetEnrollmentById([FromRoute] int enrollmentId)
         {
-            var result = await _uow.CourseEnrollmentService.GetEnrollmentById(enrollmentId);
+            var result = await _uow.CourseEnrollmentService.GetEnrollmentByIdWithProgress(enrollmentId);
 
             if (!result.Success || result.Data == null)
                 return NotFound(new { message = result.Message ?? "Matrícula não encontrada." });
