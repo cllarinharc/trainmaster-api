@@ -104,9 +104,15 @@ dotnet run
 
 Após a execução, a aplicação estará disponível em:
 
-- **HTTP**: http://localhost:7009
-- **HTTPS**: https://localhost:5001
-- **Swagger**: http://localhost:7009/swagger
+- **HTTP (local)**: http://localhost:7009
+- **HTTPS (local)**: https://localhost:5001
+- **Swagger (local)**: http://localhost:7009/swagger
+
+### **4. Ambiente de Produção (Azure)**
+
+A API também está publicada em ambiente de produção na Azure:
+
+- **Base URL (produção)**: https://trainmaster-api-1764192501.azurewebsites.net/api
 
 ### **3. Banco de Dados**
 
@@ -126,7 +132,7 @@ Após a execução, a aplicação estará disponível em:
 
 ---
 
-### **4. Configuração do Log**
+### **5. Configuração do Log**
 
 - O sistema gera logs diários com informações sobre os processos executados no projeto.
 - O log será salvo no diretório:  
@@ -139,7 +145,7 @@ Após a execução, a aplicação estará disponível em:
 
 ---
 
-### **5. Finalização**
+### **6. Finalização**
 
 - Após seguir as etapas anteriores, o sistema será iniciado, e uma página com a interface **Swagger** será aberta automaticamente no navegador configurado no Visual Studio. Essa página permitirá explorar e testar os endpoints da API.
 
