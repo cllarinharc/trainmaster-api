@@ -35,10 +35,13 @@ namespace TrainMaster.Infrastracture.Connections
         public DbSet<QuestionOptionEntity> QuestionOptionEntity { get; set; }
         public DbSet<ExamEntity> ExamEntity { get; set; }
         public DbSet<ExamQuestionEntity> ExamQuestionEntity { get; set; }
+        public DbSet<ExamHistoryEntity> ExamHistoryEntity { get; set; }
         public DbSet<BadgeEntity> BadgeEntity { get; set; }
         public DbSet<UserBadgeEntity> UserBadgeEntity { get; set; }
         public DbSet<FaqEntity> FaqEntity { get; set; }
         public DbSet<CourseEnrollmentEntity> CourseEnrollmentEntity { get; set; }
+        public DbSet<CourseProgressEntity> CourseProgressEntity { get; set; }
+        public DbSet<CourseActivityProgressEntity> CourseActivityProgressEntity { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

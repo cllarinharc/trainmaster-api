@@ -189,6 +189,56 @@ namespace TrainMaster.Infrastracture.Migrations
                     b.ToTable("CourseActivitieEntity");
                 });
 
+            modelBuilder.Entity("TrainMaster.Domain.Entity.CourseActivityProgressEntity", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("ActivityId")
+                        .HasColumnType("integer");
+
+                    b.Property<DateTime?>("CompletedDate")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<int>("CourseId")
+                        .HasColumnType("integer");
+
+                    b.Property<DateTime?>("CreateDate")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<bool>("IsCompleted")
+                        .HasColumnType("boolean");
+
+                    b.Property<DateTime?>("LastAccessedDate")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<DateTime?>("ModificationDate")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<decimal?>("Score")
+                        .HasColumnType("decimal(10,2)");
+
+                    b.Property<DateTime?>("StartedDate")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<int>("StudentId")
+                        .HasColumnType("integer");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ActivityId");
+
+                    b.HasIndex("CourseId");
+
+                    b.HasIndex("StudentId", "ActivityId")
+                        .IsUnique();
+
+                    b.ToTable("CourseActivityProgressEntity");
+                });
+
             modelBuilder.Entity("TrainMaster.Domain.Entity.CourseAvaliationEntity", b =>
                 {
                     b.Property<int>("Id")
@@ -339,6 +389,59 @@ namespace TrainMaster.Infrastracture.Migrations
                         .IsUnique();
 
                     b.ToTable("CourseFeedbackEntity");
+                });
+
+            modelBuilder.Entity("TrainMaster.Domain.Entity.CourseProgressEntity", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("CompletedActivitiesCount")
+                        .HasColumnType("integer");
+
+                    b.Property<DateTime?>("CompletedDate")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<int>("CourseId")
+                        .HasColumnType("integer");
+
+                    b.Property<DateTime?>("CreateDate")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<bool>("IsCompleted")
+                        .HasColumnType("boolean");
+
+                    b.Property<DateTime?>("LastActivityDate")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<int?>("LastActivityId")
+                        .HasColumnType("integer");
+
+                    b.Property<DateTime?>("ModificationDate")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<decimal>("ProgressPercentage")
+                        .HasColumnType("decimal(5,2)");
+
+                    b.Property<int>("StudentId")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("TotalActivitiesCount")
+                        .HasColumnType("integer");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CourseId");
+
+                    b.HasIndex("LastActivityId");
+
+                    b.HasIndex("StudentId", "CourseId")
+                        .IsUnique();
+
+                    b.ToTable("CourseProgressEntity");
                 });
 
             modelBuilder.Entity("TrainMaster.Domain.Entity.DepartmentEntity", b =>
@@ -910,6 +1013,33 @@ namespace TrainMaster.Infrastracture.Migrations
                     b.Navigation("Course");
                 });
 
+            modelBuilder.Entity("TrainMaster.Domain.Entity.CourseActivityProgressEntity", b =>
+                {
+                    b.HasOne("TrainMaster.Domain.Entity.CourseActivitieEntity", "Activity")
+                        .WithMany()
+                        .HasForeignKey("ActivityId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("TrainMaster.Domain.Entity.CourseEntity", "Course")
+                        .WithMany()
+                        .HasForeignKey("CourseId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("TrainMaster.Domain.Entity.UserEntity", "Student")
+                        .WithMany()
+                        .HasForeignKey("StudentId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Activity");
+
+                    b.Navigation("Course");
+
+                    b.Navigation("Student");
+                });
+
             modelBuilder.Entity("TrainMaster.Domain.Entity.CourseAvaliationEntity", b =>
                 {
                     b.HasOne("TrainMaster.Domain.Entity.CourseEntity", "Course")
@@ -965,6 +1095,32 @@ namespace TrainMaster.Infrastracture.Migrations
                         .IsRequired();
 
                     b.Navigation("Course");
+
+                    b.Navigation("Student");
+                });
+
+            modelBuilder.Entity("TrainMaster.Domain.Entity.CourseProgressEntity", b =>
+                {
+                    b.HasOne("TrainMaster.Domain.Entity.CourseEntity", "Course")
+                        .WithMany()
+                        .HasForeignKey("CourseId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("TrainMaster.Domain.Entity.CourseActivitieEntity", "LastActivity")
+                        .WithMany()
+                        .HasForeignKey("LastActivityId")
+                        .OnDelete(DeleteBehavior.SetNull);
+
+                    b.HasOne("TrainMaster.Domain.Entity.UserEntity", "Student")
+                        .WithMany()
+                        .HasForeignKey("StudentId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Course");
+
+                    b.Navigation("LastActivity");
 
                     b.Navigation("Student");
                 });

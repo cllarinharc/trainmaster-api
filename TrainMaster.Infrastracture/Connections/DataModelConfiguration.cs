@@ -153,6 +153,56 @@ namespace TrainMaster.Infrastracture.Connections
                       .HasFilter("\"IsActive\" = TRUE");
             });
 
+            modelBuilder.Entity<CourseProgressEntity>(entity =>
+            {
+                entity.HasKey(cp => cp.Id);
+                entity.Property(cp => cp.ProgressPercentage).IsRequired().HasColumnType("decimal(5,2)");
+                entity.Property(cp => cp.CompletedActivitiesCount).IsRequired();
+                entity.Property(cp => cp.TotalActivitiesCount).IsRequired();
+                entity.Property(cp => cp.IsCompleted).IsRequired();
+
+                entity.HasOne(cp => cp.Student)
+                      .WithMany()
+                      .HasForeignKey(cp => cp.StudentId)
+                      .OnDelete(DeleteBehavior.Restrict);
+
+                entity.HasOne(cp => cp.Course)
+                      .WithMany()
+                      .HasForeignKey(cp => cp.CourseId)
+                      .OnDelete(DeleteBehavior.Restrict);
+
+                entity.HasOne(cp => cp.LastActivity)
+                      .WithMany()
+                      .HasForeignKey(cp => cp.LastActivityId)
+                      .OnDelete(DeleteBehavior.SetNull);
+
+                entity.HasIndex(cp => new { cp.StudentId, cp.CourseId }).IsUnique();
+            });
+
+            modelBuilder.Entity<CourseActivityProgressEntity>(entity =>
+            {
+                entity.HasKey(cap => cap.Id);
+                entity.Property(cap => cap.IsCompleted).IsRequired();
+                entity.Property(cap => cap.Score).HasColumnType("decimal(10,2)");
+
+                entity.HasOne(cap => cap.Student)
+                      .WithMany()
+                      .HasForeignKey(cap => cap.StudentId)
+                      .OnDelete(DeleteBehavior.Restrict);
+
+                entity.HasOne(cap => cap.Course)
+                      .WithMany()
+                      .HasForeignKey(cap => cap.CourseId)
+                      .OnDelete(DeleteBehavior.Restrict);
+
+                entity.HasOne(cap => cap.Activity)
+                      .WithMany()
+                      .HasForeignKey(cap => cap.ActivityId)
+                      .OnDelete(DeleteBehavior.Restrict);
+
+                entity.HasIndex(cap => new { cap.StudentId, cap.ActivityId }).IsUnique();
+            });
+
             modelBuilder.Entity<DepartmentEntity>(entity =>
             {
                 entity.HasKey(d => d.Id);

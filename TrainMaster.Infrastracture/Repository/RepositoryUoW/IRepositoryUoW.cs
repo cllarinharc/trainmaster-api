@@ -27,6 +27,8 @@ namespace TrainMaster.Infrastracture.Repository.RepositoryUoW
         ICalendarRepository CalendarRepository { get; }
         IExamHistoryRepository ExamHistoryRepository { get; }
         ICourseEnrollmentRepository CourseEnrollmentRepository { get; }
+        ICourseProgressRepository CourseProgressRepository { get; }
+        ICourseActivityProgressRepository CourseActivityProgressRepository { get; }
 
         Task SaveAsync();
         void Commit();

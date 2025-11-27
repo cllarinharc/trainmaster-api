@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Net.Mime;
 using TrainMaster.Application.UnitOfWork;
+using TrainMaster.Domain.Dto;
 using TrainMaster.Domain.Entity;
 
 namespace TrainMaster.Controllers
@@ -15,6 +16,26 @@ namespace TrainMaster.Controllers
         public ExamHistoryController(IUnitOfWorkService uow)
         {
             _uow = uow;
+        }
+
+        [HttpPost]
+        [Consumes(MediaTypeNames.Application.Json)]
+        [ProducesResponseType(typeof(ExamHistoryEntity), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public async Task<IActionResult> Add([FromBody] ExamHistoryDto dto)
+        {
+            if (dto == null)
+                return BadRequest(new { message = "Payload não pode ser nulo." });
+
+            if (!ModelState.IsValid)
+                return ValidationProblem(ModelState);
+
+            var result = await _uow.ExamHistoryService.Add(dto);
+
+            if (result.Success)
+                return Ok(result.Data);
+
+            return BadRequest(new { message = result.Message ?? "Erro ao registrar histórico de exame." });
         }
 
         [HttpGet("user/{userId:long}")]

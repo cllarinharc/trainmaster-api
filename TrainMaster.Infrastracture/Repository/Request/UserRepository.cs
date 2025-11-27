@@ -53,10 +53,10 @@ namespace TrainMaster.Infrastracture.Repository.Request
                 .AsNoTracking()
                 .OrderBy(user => user.Id)
                 .Skip((pageNumber - 1) * pageSize)
-                .Take(pageSize) 
+                .Take(pageSize)
                 .Select(user => new UserDto
                 {
-                    Id = user.Id, 
+                    Id = user.Id,
                     Email = user.Email,
                     Cpf = user.Cpf,
                     IsActive = user.IsActive

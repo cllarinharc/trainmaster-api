@@ -25,5 +25,7 @@ namespace TrainMaster.Application.UnitOfWork
         CalendarService CalendarService { get; }
         ExamHistoryService ExamHistoryService { get; }
         CourseEnrollmentService CourseEnrollmentService { get; }
+        CourseProgressService CourseProgressService { get; }
+        CourseActivityProgressService CourseActivityProgressService { get; }
     }
 }

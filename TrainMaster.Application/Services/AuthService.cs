@@ -51,7 +51,7 @@ namespace TrainMaster.Application.Services
                 Log.Information($"Usuário {user.Email} autenticado com sucesso.");
 
                 var loginEntity = new LoginDto
-                {                    
+                {
                     Cpf = user.Cpf,
                     Id = user.Id,
                     Email = user.Email,
