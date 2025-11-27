@@ -10,3 +10,4 @@ export ConnectionStrings__WebApiDatabase="$CONNECTION_STRING"
 
 dotnet ef database update --project TrainMaster.Infrastracture --startup-project TrainMaster
 
+

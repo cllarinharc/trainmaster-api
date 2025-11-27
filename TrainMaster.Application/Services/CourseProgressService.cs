@@ -89,7 +89,6 @@ namespace TrainMaster.Application.Services
 
         public async Task<Result<CourseProgressResponseDto>> UpdateProgress(int studentId, int courseId)
         {
-            using var transaction = _repositoryUoW.BeginTransaction();
             try
             {
                 var progress = await _repositoryUoW.CourseProgressRepository.GetByStudentAndCourse(studentId, courseId);
@@ -139,19 +138,13 @@ namespace TrainMaster.Application.Services
 
                 _repositoryUoW.CourseProgressRepository.Update(progress);
                 await _repositoryUoW.SaveAsync();
-                await transaction.CommitAsync();
 
                 return Result<CourseProgressResponseDto>.Okedit(MapToResponseDto(progress));
             }
             catch (Exception ex)
             {
                 Log.Error(ex, "Erro ao atualizar progresso do curso");
-                await transaction.RollbackAsync();
                 return Result<CourseProgressResponseDto>.Error($"Erro ao atualizar progresso: {ex.Message}");
-            }
-            finally
-            {
-                await transaction.DisposeAsync();
             }
         }
 
@@ -206,4 +199,5 @@ namespace TrainMaster.Application.Services
         }
     }
 }
+
 

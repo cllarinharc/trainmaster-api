@@ -146,3 +146,4 @@ Console.WriteLine($"   ❓ Questões criadas: {totalQuestions}");
 Console.WriteLine($"   🔘 Opções criadas: {totalOptions}");
 Console.WriteLine("=".PadRight(60, '='));
 
+

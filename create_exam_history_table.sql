@@ -27,3 +27,4 @@ CREATE INDEX IF NOT EXISTS "IX_ExamHistoryEntity_ExamId_StudentId" ON "ExamHisto
 CREATE UNIQUE INDEX IF NOT EXISTS "IX_ExamHistoryEntity_ExamId_StudentId_AttemptNumber"
     ON "ExamHistoryEntity"("ExamId", "StudentId", "AttemptNumber");
 
+
